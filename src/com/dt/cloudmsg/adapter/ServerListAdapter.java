@@ -9,6 +9,7 @@ import com.dt.cloudmsg.views.SettingActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -122,5 +123,7 @@ public class ServerListAdapter extends BaseAdapter implements XDataChangeListene
             if(!imei.equals(device.getImei()) && device.isBound())
                 devices.add(device);
         }
+        this.notifyDataSetChanged();
+        Log.d(TAG, "num of devices:" + devices.size());
     }
 }

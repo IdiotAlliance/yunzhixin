@@ -3,6 +3,7 @@ package com.dt.cloudmsg.service;
 import android.app.*;
 import android.content.*;
 import android.content.SharedPreferences.Editor;
+import android.database.sqlite.SQLiteBindOrColumnIndexOutOfRangeException;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -62,7 +63,7 @@ import java.util.concurrent.TimeUnit;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MyService extends Service implements Handler.Callback {
+public class MyService extends Service {
 	
 	private static final String TAG = MyService.class.getName();
 
@@ -137,7 +138,16 @@ public class MyService extends Service implements Handler.Callback {
     private static BroadcastReceiver pushMethodReceiver = null;
 
     private static final IntentFilter boundChannelFilter = new IntentFilter(IntentConstants.INTENT_ACTION_BOUND_CHANNEL);
-    private static BroadcastReceiver boundChannelReceiver = null;    
+    private static BroadcastReceiver boundChannelReceiver = null;
+
+    private static final IntentFilter contactsLoadedFilter = new IntentFilter(IntentConstants.INTENT_ACTION_CONTACT_LOADED);
+    private static BroadcastReceiver contactsLoadedReceiver = null;
+
+    private static final IntentFilter deleteSessionFilter = new IntentFilter(IntentConstants.INTENT_ACTION_DELETE_SESSION);
+    private static BroadcastReceiver deleteSessionReceiver = null;
+
+    private static final IntentFilter setBlackFilter = new IntentFilter(IntentConstants.INTENT_ACTION_SET_BLACK);
+    private static BroadcastReceiver setBlackReceiver = null;
     
     private static Timer heartBeatScheduler = null;
     private static ScheduledExecutorService ses = Executors.newScheduledThreadPool(1);
@@ -152,8 +162,6 @@ public class MyService extends Service implements Handler.Callback {
     private static ServerSource serverSource;
     private static ChatMsgSource chatMsgSource;
     private static ContactsSource contactsSource;
-
-    private static Handler handler;
 
     public static final int MSG_SEND = 0x00; // 短消息已发出
     public static final int CONTACT_LOADED = 0x01; // 联系人已加载
@@ -176,7 +184,6 @@ public class MyService extends Service implements Handler.Callback {
 				.getSystemService(Context.TELEPHONY_SERVICE);
         sp = PreferenceManager.getDefaultSharedPreferences(this);
 
-        handler = new Handler(this);
     }
 
 	@SuppressWarnings("unchecked")
@@ -209,37 +216,6 @@ public class MyService extends Service implements Handler.Callback {
         chatMsgSource = new ChatMsgSource(this, null, null, null);
         chatMsgDAO.register(chatMsgSource);
 
-        // 启用异步线程加载联系人
-        new AsyncTask(){
-
-            @Override
-            protected Object doInBackground(Object[] objects) {
-                contactsSource = new ContactsSource(MyService.this);
-                // 加载联系人，并排序
-                int position=0;
-                contacts.clear();
-                while (position<contactsSource.size()) {
-                    ContactsEntity contactsEntity=contactsSource.get(position);
-                    String contact_id = contactsEntity.getContactID();
-                    String name = contactsEntity.getDisplayName();
-                    List<String> number = contactsEntity.getNumber();
-                    if(number.size() > 0){
-                        // 只考虑有号码的联系人
-                        for(String num: number){
-                            Contact c = new Contact(contacts.size(), contact_id, name, num);
-                            int i = contacts.size();
-                            while (i - 1 >= 0 && c.compareTo(contacts.get(i - 1)) < 0)
-                                i--;
-                            contacts.add(i, c);
-                        }
-                    }
-                    position++;
-                }
-                handler.sendEmptyMessage(CONTACT_LOADED);
-                return null;
-            }
-        }.execute(null, null, null);
-
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         isServerOn = sp.getBoolean(SettingActivity.SP_KEY_SERVER_ON_OFF, false);
         isCallReplyOn = sp.getBoolean(SettingActivity.SP_KEY_SERVER_CALL_ON_OFF, false);
@@ -259,6 +235,9 @@ public class MyService extends Service implements Handler.Callback {
         smsSentReceiver = new SmsSentReceiver();
         pushMethodReceiver = new PushMethodReceiver();
         boundChannelReceiver = new BoundChannelReceiver();
+        contactsLoadedReceiver = new ContactsLoadedReceiver();
+        deleteSessionReceiver = new DeleteSessionReceiver();
+        setBlackReceiver = new SetBlackReceiver();
 
         this.registerReceiver(smsReceiver, smsFilter);
         this.registerReceiver(callReceiver, callFilter);
@@ -273,6 +252,9 @@ public class MyService extends Service implements Handler.Callback {
         this.registerReceiver(smsSentReceiver, smsSentFilter);
         this.registerReceiver(pushMethodReceiver, pushMethodFilter);
         this.registerReceiver(boundChannelReceiver, boundChannelFilter);
+        this.registerReceiver(contactsLoadedReceiver, contactsLoadedFilter);
+        this.registerReceiver(deleteSessionReceiver, deleteSessionFilter);
+        this.registerReceiver(setBlackReceiver, setBlackFilter);
 
         // 开启极光推送服务
 //        startJPush();
@@ -305,6 +287,9 @@ public class MyService extends Service implements Handler.Callback {
         if(smsSentReceiver != null) this.unregisterReceiver(smsSentReceiver);
         if(pushMethodReceiver != null) this.unregisterReceiver(pushMethodReceiver);
         if(boundChannelReceiver != null) this.unregisterReceiver(boundChannelReceiver);
+        if(contactsLoadedReceiver != null) this.unregisterReceiver(contactsLoadedReceiver);
+        if(deleteSessionReceiver != null) this.unregisterReceiver(deleteSessionReceiver);
+        if(setBlackReceiver != null) this.unregisterReceiver(setBlackReceiver);
         
         //stopJPush();
         stopBDPush();
@@ -331,32 +316,49 @@ public class MyService extends Service implements Handler.Callback {
     }
 
     public static boolean isBound(){
-        return deviceDAO.isBound(account.getIMEI());
+        return deviceDAO.isBound(account.getAccountName(), account.getIMEI());
     }
-//
-//    /****
-//     * 开启极光推送服务
-//     */
-//    private void startJPush(){
-//        // 开启JPush服务
-//        JPushInterface.setDebugMode(true);
-//        // 设置tag和alias
-//        Set<String> tags = new HashSet<String>();
-//        tags.add(account.getAccountName());
-//        // alias = username_imei, tag = username
-//        JPushInterface.setAliasAndTags(this, account.getAccountName() + "_" + account.getIMEI(), tags, new MyTagAliasCallback());
-//        JPushInterface.init(this);
-//        JPushInterface.resumePush(this);
-//    }
-//
-//    /***
-//     * 关闭极光推送服务
-//     */
-//    private void stopJPush(){
-//        // 关闭JPush
-//        JPushInterface.stopPush(this);
-//    }
-//
+
+    /****
+     * 加载联系人
+     * @param context
+     */
+    public static void loadContacts(final Context context){
+        // 启用异步线程加载联系人
+        new AsyncTask(){
+
+            @Override
+            protected Object doInBackground(Object[] objects) {
+                contactsSource = new ContactsSource(context);
+                // 加载联系人，并排序
+                int position=0;
+                contacts.clear();
+                while (position<contactsSource.size()) {
+                    ContactsEntity contactsEntity=contactsSource.get(position);
+                    String contact_id = contactsEntity.getContactID();
+                    String name = contactsEntity.getDisplayName();
+                    List<String> number = contactsEntity.getNumber();
+                    if(number.size() > 0){
+                        // 只考虑有号码的联系人
+                        for(String num: number){
+                            Contact c = new Contact(contacts.size(), contact_id, name, num);
+                            int i = contacts.size();
+                            while (i - 1 >= 0 && c.compareTo(contacts.get(i - 1)) < 0)
+                                i--;
+                            contacts.add(i, c);
+                        }
+                    }
+                    position++;
+                }
+                Log.d(TAG, "contacts loaded");
+                contactsLoadded = true;
+                Intent intent = new Intent(IntentConstants.INTENT_ACTION_CONTACT_LOADED);
+                context.sendBroadcast(intent);
+                return null;
+            }
+        }.execute(null, null, null);
+    }
+
     /***
      * 开启百度推送服务
      */
@@ -445,7 +447,7 @@ public class MyService extends Service implements Handler.Callback {
 	private void newNotification(int icon, CharSequence tickerText, long when,
 			int intentFlags, CharSequence title, CharSequence msg, Class target) {
 		Notification notification = new Notification(icon, tickerText, when);
-		notification.flags |= Notification.FLAG_AUTO_CANCEL; 
+		notification.flags |= Notification.FLAG_AUTO_CANCEL;
 		notification.defaults |= Notification.DEFAULT_SOUND;
 		Intent intent = new Intent(this, target);
 		intent.setFlags(intentFlags);
@@ -497,27 +499,50 @@ public class MyService extends Service implements Handler.Callback {
         return contacts;
     }
 
-    public static boolean isBound(String imei){
-        return deviceDAO.isBound(imei);
+    public static boolean isBound(String account, String imei){
+        return deviceDAO.isBound(account, imei);
     }
 
     public static boolean isContactsLoadded(){
         return contactsLoadded;
     }
 
-    @Override
-    public boolean handleMessage(Message message) {
-        switch (message.what){
-            case CONTACT_LOADED:{
-                contactsLoadded = true;
+    private class ContactsLoadedReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(intent.getAction().equals(IntentConstants.INTENT_ACTION_CONTACT_LOADED)){
+                Log.d(TAG, "contacts loaded");
                 // 联系人加载完毕
                 while (mbCache.size() > 0){
                     handleMsg(mbCache.remove());
                 }
-                break;
             }
         }
-        return false;
+    }
+
+    private class DeleteSessionReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(intent.getAction().equals(IntentConstants.INTENT_ACTION_DELETE_SESSION)){
+                String source = intent.getStringExtra(IntentConstants.KEY_INTENT_SVC_SOURCE);
+                String target = intent.getStringExtra(IntentConstants.KEY_INTENT_SVC_TARGET);
+                msgListDAO.delete(account.getAccountName(), source, target);
+                chatMsgDAO.delete(account.getAccountName(), source, target);
+            }
+        }
+    }
+
+    private class SetBlackReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(intent.getAction().equals(IntentConstants.INTENT_ACTION_SET_BLACK)){
+                String target = intent.getStringExtra(IntentConstants.KEY_INTENT_SVC_TARGET);
+
+            }
+        }
     }
     
     private class PushMethodReceiver extends BroadcastReceiver{
@@ -807,7 +832,7 @@ public class MyService extends Service implements Handler.Callback {
 	                String[] dests   = targets.split(";");
 	                long now = System.currentTimeMillis();
 	                for(String number: numbers){
-	                    String imei = deviceDAO.getImei(number);
+	                    String imei = deviceDAO.getImei(account.getAccountName(), number);
 	                	Log.d(TAG, "using " + number + "(" + imei + ")" + " to send sms");
 	                    if(imei != null){
 	                        MessageBean mb = new MessageBean();

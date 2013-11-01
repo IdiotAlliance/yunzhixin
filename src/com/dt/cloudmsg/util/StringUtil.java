@@ -13,12 +13,15 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.io.UnsupportedEncodingException;
 import java.text.Collator;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -48,48 +51,76 @@ public class StringUtil {
 	}
 
 	/**
-	 * ��ȡstr��ƴ������ĸ��������ĸ���Ǻ��֣���ֱ�ӷ��أ���������ú��ֵĺ���ƴ������ȡ����ĸ
+	 * 获取一个字符串的全拼，如果字符串中包含多音字，则进行重复
 	 *
 	 * @param str
 	 * @return
 	 */
 	public static String getPinyin(String str) {
         if(str != null){
-            String py = "";
+            List<String> results = new ArrayList<String>();
+            results.add("");
             for (char c : str.toCharArray()) {
+                List<String> temp = new ArrayList<String>();
                 String string = String.valueOf(c);
                 if (isChinese(string)) {
-                    py += toPinYin(c);
+                    String[] pinyins = toPinYin(c);
+                    for(String pinyin: pinyins){
+                        for(String result: results){
+                            temp.add(result + pinyin.trim());
+                        }
+                    }
                 } else {
-                    py += string;
+                    for(String result: results)
+                        temp.add(result + string);
                 }
+                results = temp;
             }
+            String py = "";
+            for(String result: results) py += result;
             return py;
         }
         return null;
 	}
 
     /***
-     * 获得一个字符串的首字母
+     * 获得一个字符串的首字母, 结果转化为小写
      * @param str
      * @return
      */
     public static String getShouZiMu(String str){
-        String result = "";
         if(str != null){
+            List<String> results = new ArrayList<String>();
+            results.add("");
             String[] segs = str.toLowerCase().split("\\s*[._-]+\\s*");
             for(String seg: segs){
                 if(seg != null && seg.length() > 0){
                     for(char c: seg.toCharArray()){
-                        if(isChinese(c + ""))
-                            result += toPinYin(c).charAt(0);
-                        else
-                            result += c;
+                        List<String> temp = new ArrayList<String>();
+                        if(isChinese(c + "")){
+                            String[] pinyins = toPinYin(c);
+                            for(String pinyin: pinyins){
+                                for(String result: results){
+                                    if(pinyin.length() > 0)
+                                        temp.add(result + pinyin.toCharArray()[0]);
+                                }
+                            }
+                        }
+                        else{
+                            for(String result: results)
+                                temp.add(result + c);
+                        }
+                        results = temp;
                     }
                 }
             }
+            String shouzimu = "";
+            for(String result: results)
+                shouzimu += result;
+            Log.d("StringUtil", str + "的首字母是：" + shouzimu);
+            return shouzimu.toLowerCase();
         }
-        return result.toLowerCase();
+        return null;
     }
 
     /***
@@ -188,15 +219,15 @@ public class StringUtil {
 	 * @return
 	 * @throws net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination
 	 */
-	protected static String toPinYin(char c) {
+	protected static String[] toPinYin(char c) {
 
 		try {
-			return PinyinHelper.toHanyuPinyinStringArray(c, t1)[0].trim();
+			return PinyinHelper.toHanyuPinyinStringArray(c, t1);
 		} catch (BadHanyuPinyinOutputFormatCombination e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "z";
+		return new String[]{"z"};
 	}
 
 	public static String BASE64Encode(String str)

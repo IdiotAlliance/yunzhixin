@@ -66,6 +66,13 @@ public class ChatMsgDAO extends AbstractDAO<ChatMsgEntity>{
         this.notifyDelete(chatMsgEntity);
     }
 
+    public void delete(String account, String source, String target){
+        this.db.delete(TABLE_NAME,
+                       "_account=? and ((_from=? and _to=?) or (_from=? and _to=?))",
+                       new String[]{account, source, target, target, source});
+        this.nofiyChange();
+    }
+
     @Override
     public void deleteById(long id) {
         ChatMsgEntity entity = getById(id);

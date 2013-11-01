@@ -197,7 +197,7 @@ public class SettingActivity extends PreferenceActivity implements
 
 		// 如果是第一开启，查询当前设备是否绑定过，如果绑定过，则根据已知的信息来配置默认的信息
 		DeviceDAO dd = new DeviceDAO(this);
-		List<Device> devices = dd.getDeivces();
+		List<Device> devices = dd.getDeivces(username);
 		for (Device device : devices) {
 			if (imei.equals(device.getImei())) {
 				// 该设备已经绑定过

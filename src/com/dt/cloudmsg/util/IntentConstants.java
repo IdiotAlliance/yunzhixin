@@ -34,6 +34,8 @@ public class IntentConstants {
     public static final String KEY_INTENT_SVC_MSGID  = "intent_svc_msgid";
     public static final String KEY_INTENT_SVC_IMEI   = "intent_svc_imei";
     public static final String KEY_INTENT_SVC_KEY    = "intent_svc_key";
+    public static final String KEY_INTENT_SVC_SOURCE = "intent_svc_source";
+    public static final String KEY_INTENT_SVC_TARGET = "intent_svc_target";
 
     public static final String KEY_INTENT_MSG_SET_FIRST  = "intent_msg_set_first";
     public static final String KEY_INTENT_MSG_SET_CHANGE = "intent_msg_set_changed";
@@ -81,4 +83,7 @@ public class IntentConstants {
     public static final String INTENT_ACTION_FORGOT_VALID = "com.dt.cloudmsg.intent.forgot.valid";
     public static final String INTENT_ACTION_BDPUSH_METHOD = "com.dt.cloudmsg.bdpush.method";
     public static final String INTENT_ACTION_BOUND_CHANNEL = "com.dt.cloudmsg.bound.channel";
+    public static final String INTENT_ACTION_DELETE_SESSION = "com.dt.cloudmsg.delete.session";
+    public static final String INTENT_ACTION_SET_BLACK = "com.dt.cloudmsg.set.black";
+    public static final String INTENT_ACTION_CONTACT_LOADED = "com.dt.cloudmsg.contact.loaded";
 }

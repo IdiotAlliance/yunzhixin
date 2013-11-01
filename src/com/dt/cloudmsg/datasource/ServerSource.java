@@ -2,6 +2,7 @@ package com.dt.cloudmsg.datasource;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 
 import com.dt.cloudmsg.dao.DeviceDAO;
 import com.dt.cloudmsg.model.Device;
@@ -15,7 +16,8 @@ import java.util.List;
  */
 public class ServerSource extends AbstractDataSource<Device>{
 
-    private static List<Device> devices = new LinkedList<Device>();
+    private static final String TAG = ServerSource.class.getName();
+    private List<Device> devices = new LinkedList<Device>();
     private String account;
 
 	public ServerSource(Context context, String account) {
@@ -48,10 +50,11 @@ public class ServerSource extends AbstractDataSource<Device>{
     public void onUpdate(Device device) {
         int index = devices.indexOf(device);
         if(index >= 0){
-            devices.add(index, device);
-            devices.remove(index + 1);
-            this.notifyUpdate(device);
+            devices.remove(index);
         }
+        devices.add(0, device);
+        Collections.sort(devices);
+        this.notifyUpdate(device);
     }
 
     @Override
@@ -86,6 +89,10 @@ public class ServerSource extends AbstractDataSource<Device>{
             devices.add(device);
         }
         cursor.close();
+        Log.d(TAG, "num of devices:" + devices.size());
+        for(int i = 0;i < devices.size();i++){
+            Log.d(TAG, i + ":" + devices.get(i).toJson());
+        }
     }
 
 

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="AndroidLayoutPreviewToolWindow">
     <option name="state">
-      <GlobalState>
-        <option name="visible" value="false" />
-      </GlobalState>
+      <GlobalState />
     </option>
   </component>
   <component name="AndroidLayouts">
@@ -28,217 +26,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ae71bbc-581d-47e8-8139-73b870b7b197" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/add_contact.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/add_contact_unclickable.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/arrow_down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/arrow_left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/arrow_right_gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bg_login.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/bg_progress.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blue_bottombar.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_big_gray_defult.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_big_gray_pressed.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_single_blue_defult.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_single_blue_pressed.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_single_gray_defult.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_single_gray_pressed.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_single_red_defult.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_single_red_pressed.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_span_vertical.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_top_defult.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_top_pressed.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_top_unclickable_black.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_top_unclickable_blue.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/call.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/cancel_all.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/chat_bg_left_defult.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/chat_bg_left_pressed.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/chat_bg_right_defult.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/chat_bg_right_pressed.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/checkbox_black_selected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/checkbox_black_unselected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/checkbox_selected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/checkbox_unselected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/close_small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/configure.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/cover_blue.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/cover_dark_blue.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/cover_transparent.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/cover_white.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/dialog_white.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/edittext_style1_defult.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/edittext_style1_focus.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/edittext_style2_defult.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/edittext_style2_focus.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/error.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/exist_msg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-xhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-xxhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/armeabi/libjpush.so" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/light_blue_bottombar.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/lightblue_container.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/list_extra_tag.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/list_span_horizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/list_span_vertical.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/local.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/make_call.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/mark.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/menu_bottombar_bottom.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/msg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/myicon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/myicon_small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/new_msg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/picked.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/pinyin.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/progress_bar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/select_all.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/send.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/server_local.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/server_local_offline.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/server_offline.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/server_online.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/server_unusua.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/sever_switch.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/shadow_span_horizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/shadow_span_horizontal_up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/tips.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/title_bg_login.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/title_filled_login.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/title_forgotpw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/title_login.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/title_modifypw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/title_regist.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/title_verify_forgotpw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/title_verify_regist.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/top_expansion.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/top_expansion_sapn_horizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/AbstractDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/AccountDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/AccountSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/Authentication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/BaseBean.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/receiver/CallReceiver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/ChangePassword.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/ChatMsgDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/Comfirm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DAOObserver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/DataSourceFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/DateFormatter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/model/Device.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DeviceDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/Devices.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/HeartBeat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/component/ImageBtSpinner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/receiver/JPushReceiver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/Jsonable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/LocalMsgListSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/MessageBean.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/communications/MessageCenterMsgListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/MsgIdGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/MsgListDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/service/MyService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/communications/MyServiceConnectionMsgListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/NoteDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/model/NoteMsgEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/model/Notification.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/NumberFormatter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/ObservableDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/Parser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/Profile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/RDBitmapGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/RDStringGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/Registration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/adapter/Removable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/ReturnMsg.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/service/SMSMonitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/SendReturnMsg.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/SettingActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/communications/SettingsMsgListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/service/SmsHolder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/receiver/SmsReceiver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/StringUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/UserBasicInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/UserProfile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/activity_main.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_big_gray.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_single_blue.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_single_gray.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_single_red.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/button_top.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/chat_bg_left.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/chat_bg_right.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/chatting_item_msg_text_left.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/chatting_item_msg_text_right.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/checkbox_black.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/checkbox_cover.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/colors.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/contact_picker.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/contact_picker3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/contact_picker_function.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/contact_picker_function2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/contact_picker_list.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/contact_picker_number_container.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/contact_picker_picked.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/contact_picker_picked_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/contact_picker_top.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/contactpicked_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/conv_activity.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/conv_activity_function.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/conv_activity_info.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/conv_activity_top.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/dexedLibs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/dexedLibs3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/dexedLibs4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/dexedLibs5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_change_password.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_confirm.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_confirm_rdbitmap.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_forgot_password.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_forgotpw_validation.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_login.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_msg_validation.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_rdbitmap.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_regist.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/edittext_error_mask.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/edittext_style1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/edittext_style2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/imagebt_single.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/imagebt_spinner_style1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/item_msg_center.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/item_sever_selector.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/item_simple_multi_choice.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/item_simple_multi_choice_group.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jpush_sdk_release1_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jpush_sdk_release1_5_0__2_.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libs3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libs4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libs5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/list_item_bg_black.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/list_item_bg_blue.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/loading_dialog.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/login_activity.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/msg_center.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/msg_center_function.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/msg_center_info.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/msg_center_list.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/msg_center_sever_selector.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/msg_center_top.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/msglist_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/progressbar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/pushservice_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/xml/setting_preferenceii.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/云通讯.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/云通讯1.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/balck_bottom_horizontal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/black_background_span.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blue_background_span.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blue_bottombar_bottom.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blue_bottombar_top.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/cover_transparent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/expansion_triangle_head.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/lightblue_bottombar.9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/option_span_horizontal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/option_span_vertical.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/layout/conversation_activity.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/layout/dialog_forgot_password2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/layout/loading_content.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/BaseActivity.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/BaseActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/ChatMsgDAO.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/ChatMsgDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ChatMsgSource.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ChatMsgSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ContactsSource.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ContactsSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DeviceDAO.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DeviceDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/IntentConstants.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/IntentConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/MsgListDAO.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/MsgListDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/MsgListSource.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/MsgListSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/service/MyService.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/service/MyService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/adapter/ServerListAdapter.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/adapter/ServerListAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ServerSource.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ServerSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/SettingActivity.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/SettingActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/StringUtil.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/StringUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/msg_center_operation_selector.xml" afterPath="$PROJECT_DIR$/res/layout/msg_center_operation_selector.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="云通讯.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -327,75 +144,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SystemConstants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/SystemConstants.java">
+      <file leaf-file-name="MsgCenterActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="69" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="660">
+            <state line="731" column="14" selection-start="29749" selection-end="29749" vertical-scroll-proportion="0.0" vertical-offset="9060" max-vertical-offset="13185">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LoginActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="888" column="25" selection-start="35921" selection-end="35921" vertical-scroll-proportion="0.0" vertical-offset="11476" max-vertical-offset="17895">
+            <state line="256" column="44" selection-start="8689" selection-end="8689" vertical-scroll-proportion="0.78571427" vertical-offset="2955" max-vertical-offset="18015">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/Parser.java">
+      <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="41" max-vertical-offset="330">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cipher.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/javax/crypto/Cipher.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="1" selection-start="6194" selection-end="6194" vertical-scroll-proportion="0.0" vertical-offset="1111" max-vertical-offset="1335">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyService.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/service/MyService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="447" column="61" selection-start="17370" selection-end="17370" vertical-scroll-proportion="0.15449916" vertical-offset="5609" max-vertical-offset="18150">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgListSource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/MsgListSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="32" selection-start="4102" selection-end="4102" vertical-scroll-proportion="0.0" vertical-offset="1060" max-vertical-offset="2295">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Encoder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/Encoder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="200" column="0" selection-start="6636" selection-end="6636" vertical-scroll-proportion="0.0" vertical-offset="2921" max-vertical-offset="4245">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseBean.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/beans/BaseBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="66" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+            <state line="45" column="67" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="2550">
               <folding />
             </state>
           </provider>
@@ -419,22 +189,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/msg_center_sever_selector.xml" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/adapter/ServerListAdapter.java" />
-        <option value="$PROJECT_DIR$/res/layout/msg_center.xml" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/ContactChooseActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/ObservableDAO.java" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DeviceDAO.java" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/MsgListDAO.java" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/util/Parser.java" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/util/Encoder.java" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/beans/BaseBean.java" />
         <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/SettingActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/util/SystemConstants.java" />
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/MsgListSource.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/adapter/ServerListAdapter.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ServerSource.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DeviceDAO.java" />
+        <option value="$PROJECT_DIR$/res/layout/msg_center_operation_selector.xml" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/util/IntentConstants.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/MsgListDAO.java" />
         <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/service/MyService.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/ChatMsgDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ChatMsgSource.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/MsgListSource.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ContactsSource.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/util/StringUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java" />
       </list>
     </option>
   </component>
@@ -442,10 +212,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1301" />
-    <option name="height" value="744" />
+    <option name="x" value="64" />
+    <option name="y" value="-5" />
+    <option name="width" value="1303" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -473,7 +243,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -489,6 +258,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="云通讯1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="云通讯1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="云通讯1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmsg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -550,21 +341,68 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="云通讯1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="云通讯1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmsg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="datasource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="云通讯1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="云通讯1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudmsg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beans" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD2.2" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -801,7 +639,7 @@
     <option name="totallyTimeSpent" value="110561000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
+    <frame x="64" y="-5" width="1303" height="774" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32749003" sideWeight="0.848" order="2" side_tool="false" content_ui="tabs" />
@@ -813,15 +651,15 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34087238" sideWeight="0.49959967" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6930533" sideWeight="0.49959967" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.273021" sideWeight="0.49959967" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42810985" sideWeight="0.49959967" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298639" sideWeight="0.49596122" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3002402" sideWeight="0.3069467" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40710825" sideWeight="0.49960032" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26261008" sideWeight="0.726979" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.72213244" sideWeight="0.49960032" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -921,122 +759,118 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/ContactChooseActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/model/MsgListEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="661" column="9" selection-start="18925" selection-end="18925" vertical-scroll-proportion="0.25466892" vertical-offset="8655" max-vertical-offset="11100">
-          <folding>
-            <element signature="e#1955#1964#0" expanded="false" />
-            <element signature="e#2015#2024#0" expanded="false" />
-            <element signature="e#2075#2085#0" expanded="false" />
-            <element signature="e#2143#2151#0" expanded="false" />
-            <element signature="e#2230#2245#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="680" column="56" selection-start="26296" selection-end="26323" vertical-scroll-proportion="0.0" vertical-offset="8583" max-vertical-offset="12660">
+        <state line="19" column="22" selection-start="462" selection-end="462" vertical-scroll-proportion="-1.9354838" vertical-offset="1395" max-vertical-offset="2625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DeviceDAO.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/msg_center_operation_selector.xml">
+      <provider editor-type-id="text-editor">
+        <state line="21" column="44" selection-start="804" selection-end="804" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2145">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/ContactChooseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="32" selection-start="4581" selection-end="4581" vertical-scroll-proportion="1.2385621" vertical-offset="1241" max-vertical-offset="2550">
+        <state line="60" column="63" selection-start="2088" selection-end="2088" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="11100">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/IntentConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="75" selection-start="1770" selection-end="1770" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1395">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/dao/MsgListDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="9" selection-start="3857" selection-end="3857" vertical-scroll-proportion="0.27419356" vertical-offset="1368" max-vertical-offset="2505">
-          <folding />
-        </state>
+        <state line="71" column="27" selection-start="2699" selection-end="2699" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2580" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/JsonUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ChatMsgSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
+        <state line="133" column="93" selection-start="4410" selection-end="4410" vertical-scroll-proportion="0.0" vertical-offset="1616" max-vertical-offset="2205" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/SettingActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/dao/ChatMsgDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="452" column="28" selection-start="15385" selection-end="15385" vertical-scroll-proportion="0.33147633" vertical-offset="6076" max-vertical-offset="7515">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/beans/BaseBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="66" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/SystemConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="69" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="660">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="888" column="25" selection-start="35921" selection-end="35921" vertical-scroll-proportion="0.0" vertical-offset="11476" max-vertical-offset="17895">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/Encoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="0" selection-start="6636" selection-end="6636" vertical-scroll-proportion="0.0" vertical-offset="2921" max-vertical-offset="4245">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="41" max-vertical-offset="330">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/javax/crypto/Cipher.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="1" selection-start="6194" selection-end="6194" vertical-scroll-proportion="0.0" vertical-offset="1111" max-vertical-offset="1335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/model/MsgListEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="13" selection-start="3037" selection-end="3037" vertical-scroll-proportion="6.369863" vertical-offset="0" max-vertical-offset="2625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/os/Looper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="46" selection-start="742" selection-end="742" vertical-scroll-proportion="0.46575344" vertical-offset="160" max-vertical-offset="525">
+        <state line="71" column="78" selection-start="2624" selection-end="2624" vertical-scroll-proportion="0.025466893" vertical-offset="930" max-vertical-offset="2430">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/MsgListSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="32" selection-start="4102" selection-end="4102" vertical-scroll-proportion="0.0" vertical-offset="1060" max-vertical-offset="2295">
+        <state line="75" column="28" selection-start="1955" selection-end="1955" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2370">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/model/ContactsEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="31" selection-end="31" vertical-scroll-proportion="0.032397408" vertical-offset="0" max-vertical-offset="1065">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ContactsSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="5" selection-start="742" selection-end="742" vertical-scroll-proportion="0.3125" vertical-offset="0" max-vertical-offset="1785">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/service/MyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="447" column="61" selection-start="17370" selection-end="17370" vertical-scroll-proportion="0.15449916" vertical-offset="5609" max-vertical-offset="18150">
+        <state line="343" column="49" selection-start="14516" selection-end="14516" vertical-scroll-proportion="0.33106962" vertical-offset="3990" max-vertical-offset="18510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/model/Contact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="11" selection-start="514" selection-end="514" vertical-scroll-proportion="0.2580645" vertical-offset="223" max-vertical-offset="975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/StringUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="13" selection-start="3942" selection-end="3942" vertical-scroll-proportion="0.7792869" vertical-offset="921" max-vertical-offset="4875">
+          <folding>
+            <element signature="e#1869#1877#0" expanded="true" />
+            <element signature="e#2006#2014#0" expanded="true" />
+            <element signature="e#2903#2911#0" expanded="true" />
+            <element signature="e#3212#3220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="731" column="14" selection-start="29749" selection-end="29749" vertical-scroll-proportion="0.0" vertical-offset="9060" max-vertical-offset="13185">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="67" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2550">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="256" column="44" selection-start="8689" selection-end="8689" vertical-scroll-proportion="0.78571427" vertical-offset="2955" max-vertical-offset="18015">
           <folding />
         </state>
       </provider>

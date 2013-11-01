@@ -43,6 +43,7 @@ public abstract class BaseActivity extends Activity implements Callback{
     protected static final String SP_LOGIN_COUNT = "login_count";
     protected static final String SP_LAST_REG = "last_reg";
     protected static final String SP_REG_COUNT = "reg_count";
+    protected static final String SP_LAST_ACCOUNT = "last_account";
 
     // constants
 	protected static String gusername = "";

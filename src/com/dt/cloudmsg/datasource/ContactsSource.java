@@ -21,8 +21,7 @@ public class ContactsSource extends AbstractDataSource<ContactsEntity>{
 
 	public ContactsSource(Context context) {
 		super(context, null);
-        if(contacts.size() <= 0)
-            load();
+        load();
 	}
 
 	@Override

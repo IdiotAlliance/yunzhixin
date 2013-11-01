@@ -272,8 +272,7 @@ public class MsgCenterActivity extends BaseActivity {
                 String target  = entity.getComNumber();
                 String source  = entity.getSource();
                 boolean isContact = entity.getComname()==null;
-                showOperationSelector(target,isContact);
-
+                showOperationSelector(entity.getComname(), target, isContact);
                 return true;
             }
 		});
@@ -471,8 +470,7 @@ public class MsgCenterActivity extends BaseActivity {
                 String target  = entity.getComNumber();
                 String source  = entity.getSource();
                 boolean isContact = entity.getComname()==null;
-                showOperationSelector(target,isContact);
-
+                showOperationSelector(entity.getComname(), target,isContact);
                 return true;
             }
 		});
@@ -576,7 +574,7 @@ public class MsgCenterActivity extends BaseActivity {
         server_selector.setVisibility(View.INVISIBLE);
     }
     
-    private void showOperationSelector(final String target,boolean isContact){
+    private void showOperationSelector(final String targetname, final String target,boolean isContact){
     	operation_selector.setVisibility(View.VISIBLE);
     	operation_selector.setOnClickListener(new OnClickListener() {
             @Override
@@ -588,6 +586,7 @@ public class MsgCenterActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
             	try {
+                    operation_selector.setVisibility(View.INVISIBLE);
                     Intent intent = new Intent(Intent.ACTION_CALL);
                     intent.setData(Uri.parse("tel:" + target));
                     startActivity(intent);
@@ -600,6 +599,7 @@ public class MsgCenterActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
             	if (target != null&& !target.equals("")) {
+                    operation_selector.setVisibility(View.INVISIBLE);
 					// 调用系统短信界面
 					Uri smsToUri = Uri.parse("smsto:"+ target);
 					Intent intent = new Intent(Intent.ACTION_SENDTO,smsToUri);
@@ -612,12 +612,57 @@ public class MsgCenterActivity extends BaseActivity {
     		add_contact.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
                 }
             });
     	}else{
-    		add_contact.setVisibility(View.INVISIBLE);
+    		add_contact.setVisibility(View.GONE);
     	}
-    	
+    	delete_msg.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String msg = "";
+                if(targetname != null){
+                    msg = "确认要删除与" + targetname + "的会话吗?";
+                }else if(target != null){
+                    msg = "确认要删除与" + target + "的会话吗?";
+                }else
+                    msg = "确认要删除该会话吗?";
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MsgCenterActivity.this)
+                                                    .setTitle("警告")
+                                                    .setMessage(msg)
+                                                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                                        @Override
+                                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                                            dialogInterface.dismiss();
+                                                            operation_selector.setVisibility(View.INVISIBLE);
+                                                            Intent intent = new Intent(IntentConstants.INTENT_ACTION_DELETE_SESSION);
+                                                            Device device = (Device) serverListAdapter.getItem(selected);
+                                                            intent.putExtra(IntentConstants.KEY_INTENT_SVC_SOURCE, device.getNumber());
+                                                            intent.putExtra(IntentConstants.KEY_INTENT_SVC_TARGET, target);
+                                                            sendBroadcast(intent);
+                                                        }
+                                                    })
+                                                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                                                        @Override
+                                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                                            dialogInterface.dismiss();
+                                                            operation_selector.setVisibility(View.INVISIBLE);
+                                                        }
+                                                    });
+                builder.create().show();
+            }
+        });
+
+        set_black.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                operation_selector.setVisibility(View.INVISIBLE);
+                Intent intent = new Intent(IntentConstants.INTENT_ACTION_SET_BLACK);
+                sendBroadcast(intent);
+            }
+        });
     }
     private void dismissOperationSelector(){
     	operation_selector.setVisibility(View.INVISIBLE);
@@ -630,7 +675,7 @@ public class MsgCenterActivity extends BaseActivity {
 
     private boolean isOnServer() {
         return sp.getBoolean(SettingActivity.SP_KEY_SERVER_ON_OFF + gusername, false)
-                || MyService.isBound(gIMEI);
+                || MyService.isBound(gusername, gIMEI);
     }
 
     @Override
@@ -681,7 +726,9 @@ public class MsgCenterActivity extends BaseActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) { // 获取
             // back键
-            if (functionState == STATE_SEARCH) { // 如果是search模式 ，则先恢复普通模式
+            if (operation_selector.isShown()){
+                operation_selector.setVisibility(View.INVISIBLE);
+            } else if (functionState == STATE_SEARCH) { // 如果是search模式 ，则先恢复普通模式
                 setFunctionState(STATE_NORMAL);
                 return true;
             } else if ((System.currentTimeMillis() - exitTime) > 2000) { // 连按两次退出

@@ -24,6 +24,7 @@ public class MsgListSource extends AbstractDataSource<MsgListEntity>{
 	private static List<MsgListEntity> tempList = new LinkedList<MsgListEntity>();
     private String serverNum;
     private String account;
+    private String filtstr;
     private boolean filter = false;
     
 	public MsgListSource(Context context, String account, String serverNum) {
@@ -71,6 +72,9 @@ public class MsgListSource extends AbstractDataSource<MsgListEntity>{
     @Override
     public void onChange() {
         load();
+        if(filter){
+            filter(filtstr);
+        }
         this.notifyChange();
     }
 
@@ -126,6 +130,7 @@ public class MsgListSource extends AbstractDataSource<MsgListEntity>{
     
     public void filter(String str){
     	filter = true;
+        this.filtstr = str;
     	tempList.clear();
     	if(StringUtil.isNumber(str)){
     		for(MsgListEntity entity: msgList){

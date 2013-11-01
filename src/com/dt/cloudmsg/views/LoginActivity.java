@@ -143,6 +143,8 @@ public class LoginActivity extends BaseActivity{
 
 		super.onCreate(savedInstanceState);
         this.setContentView(R.layout.login_activity);
+        // 加载联系人
+        MyService.loadContacts(LoginActivity.this.getApplicationContext());
 
         if(activityStack.size() > 1){
             // 若之前启动过，则直接跳到之前的Activity
@@ -249,6 +251,10 @@ public class LoginActivity extends BaseActivity{
 				.findViewById(R.id.password_input);
         forgotPassword = (TextView) loginFrame
                 .findViewById(R.id.dialog_login_forgot_password);
+
+        String last = getSPString(SP_LAST_ACCOUNT, null);
+        if(last != null)
+            usernameInputView.setText(last);
 
 		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(usernameInputView.getWindowToken(), 0);
@@ -818,6 +824,8 @@ public class LoginActivity extends BaseActivity{
 							showToast(LoginActivity.this, msg.getMsg(), Toast.LENGTH_LONG);
 						}
 						else{
+                            setSharedPreferences(SP_LAST_ACCOUNT, gusername);
+
                             UserBasicInfo info = JsonUtil.fromJson(msg.getMsg(), UserBasicInfo.class);
 
                             // save account info

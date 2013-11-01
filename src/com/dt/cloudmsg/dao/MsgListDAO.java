@@ -67,6 +67,11 @@ public class MsgListDAO extends AbstractDAO<MsgListEntity> {
         this.deleteById(entity.getId());
     }
 
+    public void delete(String account, String source, String target){
+        this.db.delete(TABLE_NAME, "_account=? and _source=? and _number=?", new String[]{account, source, target});
+        this.nofiyChange();
+    }
+
     @Override
     public void deleteById(long id) {
         MsgListEntity entity = getById(id);

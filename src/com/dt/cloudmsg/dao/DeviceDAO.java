@@ -54,13 +54,15 @@ public class DeviceDAO extends AbstractDAO<Device>{
     @Override
     public void update(Device device) {
         ContentValues cv = getCV(device);
-        this.db.update(TABLE_NAME, cv, "_imei=?", new String[]{device.getImei()});
+        this.db.update(TABLE_NAME, cv, "_account=? and _imei=?",
+                new String[]{device.getAccount(), device.getImei()});
         this.notifyUpdate(device);
     }
 
     @Override
     public void delete(Device device) {
-        this.db.delete(TABLE_NAME, "_imei=?", new String[]{device.getImei()});
+        this.db.delete(TABLE_NAME, "_account=? and _imei=?",
+                new String[]{device.getAccount(), device.getImei()});
         this.notifyDelete(device);
     }
 
@@ -90,9 +92,9 @@ public class DeviceDAO extends AbstractDAO<Device>{
         return device;
     }
 
-    public List<Device> getDeivces(){
+    public List<Device> getDeivces(String account){
         List<Device> devices = new ArrayList<Device>();
-        Cursor cursor = this.db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        Cursor cursor = this.db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE _account=?", new String[]{account});
         while(cursor.moveToNext()){
             Device device = new Device();
             device = new Device();
@@ -139,8 +141,9 @@ public class DeviceDAO extends AbstractDAO<Device>{
         return result;
     }
 
-    public boolean isBound(String imei){
-        Cursor cursor = this.db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE _imei=?", new String[]{imei});
+    public boolean isBound(String account, String imei){
+        Cursor cursor = this.db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE _account=? and _imei=?",
+                                    new String[]{account, imei});
         boolean result = cursor.moveToNext();
         cursor.close();
         return result;
@@ -160,8 +163,9 @@ public class DeviceDAO extends AbstractDAO<Device>{
         return cv;
     }
 
-    public String getImei(String number){
-        Cursor cursor = this.db.rawQuery("SELECT _imei FROM " + TABLE_NAME + " WHERE _number=?", new String[]{number});
+    public String getImei(String account, String number){
+        Cursor cursor = this.db.rawQuery("SELECT _imei FROM " + TABLE_NAME + " WHERE _account=? and _number=?",
+                                    new String[]{account, number});
         String imei = null;
         if(cursor.moveToNext()){
             imei = cursor.getString(cursor.getColumnIndex(_IMEI));
