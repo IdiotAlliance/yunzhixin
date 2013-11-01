@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/conv_activity_main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/list_gray" >
+
+    <!-- 功能栏 -->
+
+    <FrameLayout
+        android:id="@+id/conv_activity_function_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true" />
+    <!-- 分割 -->
+
+    <ImageView
+        android:id="@+id/conv_activity_function_area"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/conv_activity_function_layout"
+        android:background="@drawable/shadow_span_horizontal_up" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/conv_activity_function_area"
+        android:orientation="vertical" >
+
+        <!-- 顶栏 -->
+
+        <FrameLayout
+            android:id="@+id/conv_activity_top_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp" />
+
+        <!-- 提示栏 -->
+
+        <FrameLayout
+            android:id="@+id/conv_activity_info_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="24dp" />
+
+        <!-- 分割 -->
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/shadow_span_horizontal" />
+
+        <!-- 消息列表 -->
+
+        <ListView
+            android:id="@+id/conv_activity_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#0000"
+            android:divider="@null"
+            android:scrollbarStyle="outsideOverlay" />
+    </LinearLayout>
+
+</RelativeLayout>

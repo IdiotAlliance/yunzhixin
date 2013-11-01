@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/top_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/blue_bottombar" >
+
+    <com.dt.cloudmsg.component.ImageBtSingle
+        android:id="@+id/config_btn"
+        android:layout_width="48dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_top"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <ImageView
+        android:id="@+id/span_img"
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:layout_toLeftOf="@id/config_btn"
+        android:background="@drawable/button_span_vertical" />
+
+    <com.dt.cloudmsg.component.ImageBtSpinner
+        android:id="@+id/number_selector"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_toLeftOf="@id/span_img"
+        android:background="@drawable/button_top"
+        android:clickable="true"
+        android:focusable="true" />
+
+</RelativeLayout>

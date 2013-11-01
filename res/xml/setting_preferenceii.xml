@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="本机配置">
+        <EditTextPreference
+                android:key="setting_activity_localhost_name"
+                android:summary="请为这部手机命名"
+                android:title="本机命名"
+                />
+        <EditTextPreference
+                android:key="setting_activity_localhost_number"
+                android:summary="请输入本机的号码"
+                android:title="本机号码"
+                android:numeric="integer"
+                />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="服务器配置" >
+        <CheckBoxPreference
+            android:key="setting_activity_server_onoff"
+            android:summary="将您当前的手机作为消息转发服务器"
+            android:title="开启服务器" />
+
+        <CheckBoxPreference
+            android:dependency="setting_activity_server_onoff"
+            android:key="setting_activity_server_msgreply_onoff"
+            android:summary="自动回复该手机收到的短信"
+            android:title="开启短信回执" />
+
+        <EditTextPreference
+            android:defaultValue="主人换新号码啦，稍后他会联系您——by Cloudmsg"
+            android:dependency="setting_activity_server_msgreply_onoff"
+            android:key="setting_activity_server_msgreply_tv"
+            android:summary="请编辑短信回执的内容"
+            android:title="编辑回执内容" />
+
+        <CheckBoxPreference
+            android:dependency="setting_activity_server_onoff"
+            android:key="setting_activity_server_callreply_onoff"
+            android:summary="自动回复该手机收到的未接来电"
+            android:title="开启电话回执" />
+
+        <EditTextPreference
+            android:defaultValue="主人换新号码啦，稍后他会联系您——by Cloudmsg"
+            android:dependency="setting_activity_server_callreply_onoff"
+            android:key="setting_activity_server_callreply_tv"
+            android:summary="请编辑电话回执的内容"
+            android:title="编辑回执内容" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="消息接收配置" >
+        <CheckBoxPreference
+            android:key="setting_activity_push_onoff"
+            android:summary="接收来自其他服务器的消息"
+            android:title="开启消息接收" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

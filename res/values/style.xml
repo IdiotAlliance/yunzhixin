@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<style name="chat_text_date_style">
+	    <item name="android:padding">2dp</item>    
+		<item name="android:textColor">#ffffff</item>   
+		<item name="android:textSize">12sp</item>      
+		<item name="android:background">#bfbfbf</item> 
+	</style>
+  
+ 
+    <style name="edittext_style1" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/edittext_style1</item>
+    </style>
+    <style name="edittext_style2" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/edittext_style2</item>
+    </style>
+ 
+</resources>

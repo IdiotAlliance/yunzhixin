@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/list_gray"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <!-- 顶栏 -->
+
+        <FrameLayout
+            android:id="@+id/top_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp" />
+
+        <FrameLayout
+                android:id="@+id/normal_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                >
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+                <!-- 功能栏 -->
+
+                <FrameLayout
+                        android:id="@+id/function_layout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp" />
+
+                <!-- 分割 -->
+
+                <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/shadow_span_horizontal" />
+
+                <!-- 消息列表 -->
+
+                <FrameLayout
+                        android:id="@+id/msg_center_content_frame"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" >
+
+                    <ListView
+                            android:id="@+id/msg_center_listview"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:cacheColorHint="@color/translucent"
+                            android:divider="@drawable/list_span_horizontal"
+                            android:dividerHeight="2dp"
+                            android:scrollbarStyle="outsideOverlay" />
+                </FrameLayout>
+
+            </LinearLayout>
+            <FrameLayout
+                    android:id="@+id/msg_center_self_dashboard"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/list_gray"
+                    android:clickable="true">
+                <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/shadow_span_horizontal" />
+
+
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="400dp"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    >
+
+
+                <!-- 图标 -->
+
+                <ImageView
+                        android:id="@+id/msg_center_self_icon"
+                        android:layout_width="160dp"
+                        android:layout_height="132dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/local" />
+
+                <TextView
+                        android:id="@+id/msg_center_self_num"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="当前设备:15298387110"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="22sp" />
+
+                <TextView
+                        android:id="@+id/msg_center_self_status"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center"
+                        android:text="同步已开启"
+                        android:textColor="@color/msg_blue"
+                        android:textSize="28sp" />
+
+                <LinearLayout
+                        android:id="@+id/msg_center_self_config"
+                        android:layout_width="300dp"
+                        android:layout_height="104dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/button_big_gray"
+                        android:orientation="vertical" >
+
+                    <LinearLayout
+                            android:id="@+id/msg_center_self_msg_config"
+                            android:layout_width="250dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal" >
+
+                        <TextView
+                                android:id="@+id/msg_center_self_msg_onoff"
+                                android:layout_width="125dp"
+                                android:layout_height="fill_parent"
+                                android:gravity="center"
+                                android:text="短信同步:开启"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="16sp" />
+
+                        <TextView
+                                android:id="@+id/msg_center_self_msg_reply"
+                                android:layout_width="125dp"
+                                android:layout_height="fill_parent"
+                                android:gravity="center"
+                                android:text="短信回执:开启"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/msg_center_self_call_config"
+                            android:layout_width="250dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:orientation="horizontal" >
+
+                        <TextView
+                                android:id="@+id/msg_center_self_call_onoff"
+                                android:layout_width="125dp"
+                                android:layout_height="fill_parent"
+                                android:gravity="center"
+                                android:text="来点同步:开启"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="16sp" />
+
+                        <TextView
+                                android:id="@+id/msg_center_self_call_reply"
+                                android:layout_width="125dp"
+                                android:layout_height="fill_parent"
+                                android:gravity="center"
+                                android:text="来点回执:开启"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/msg_center_self_tips"
+                            android:layout_width="140dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="12dp"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal" >
+
+                        <TextView
+                                android:id="@+id/msg_center_self_tips_tv"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="更改配置"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="18sp" />
+
+                        <ImageView
+                                android:id="@+id/msg_center_self_tips_iv"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_marginLeft="2dp"
+                                android:background="@drawable/arrow_right_gray"
+                                android:gravity="center" />
+                        "
+                    </LinearLayout>
+
+                </LinearLayout>
+                <Button
+                        android:id="@+id/msg_center_self_onoffbtn"
+                        android:layout_width="304dp"
+                        android:layout_height="54dp"
+                        android:background="@drawable/button_single_red"
+                        android:text="关闭同步服务"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+            </LinearLayout>
+            </FrameLayout>
+        </FrameLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/msg_center_search_layer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/list_gray"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:id="@+id/function_frame"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/light_blue_bottombar"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="48dp"
+                android:background="@drawable/button_span_vertical" />
+
+            <com.dt.cloudmsg.component.ImageBtSingle
+                android:id="@+id/msg_center_search_layer_function_btn"
+                android:layout_width="48dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/button_top"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <EditText
+                android:id="@+id/msg_center_search_layer_txt"
+                style="@style/edittext_style2"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="54dp"
+                android:layout_centerVertical="true"
+                android:ems="10"
+                android:hint="检索联系人"
+                android:lines="1"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_gray"
+                android:textSize="16sp" >
+
+                <requestFocus />
+            </EditText>
+        </RelativeLayout>
+        <!-- 分割 -->
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/shadow_span_horizontal" />
+
+        <ListView
+            android:id="@+id/msg_center_search_layer_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="@color/translucent"
+            android:divider="@drawable/list_span_horizontal"
+            android:dividerHeight="2dp"
+            android:scrollbarStyle="outsideOverlay" >
+        </ListView>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/msg_center_operation_selector"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/operation_bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/msg_center_operation_make_call"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="16dp"
+                android:gravity="center|left"
+                android:text="拨打电话"
+                android:textColor="@color/black"
+                android:textSize="18sp" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/top_expansion_sapn_horizontal"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/msg_center_operation_switch_sever"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="16dp"
+                android:gravity="center|left"
+                android:text="转至系统短信"
+                android:textColor="@color/black"
+                android:textSize="18sp" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/top_expansion_sapn_horizontal"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/msg_center_operation_add_contact"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="16dp"
+                android:gravity="center|left"
+                android:text="添加为联系人"
+                android:textColor="@color/black"
+                android:textSize="18sp" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/top_expansion_sapn_horizontal"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/msg_center_operation_delete_msg"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="16dp"
+                android:gravity="center|left"
+                android:text="刪除对话"
+                android:textColor="@color/black"
+                android:textSize="18sp" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/top_expansion_sapn_horizontal"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/msg_center_operation_set_black"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="16dp"
+                android:gravity="center|left"
+                android:text="频闭此人"
+                android:textColor="@color/black"
+                android:textSize="18sp" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/top_expansion_sapn_horizontal"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contact_top_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/blue_bottombar" >
+
+    <!-- 左侧按钮 -->
+
+    <com.dt.cloudmsg.component.ImageBtSingle
+        android:id="@+id/contact_top_back_btn"
+        android:layout_width="48dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/button_top"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <ImageView
+        android:id="@+id/contact_top_span1"
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@id/contact_top_back_btn"
+        android:background="@drawable/button_span_vertical" />
+
+    <!-- title区域 -->
+
+    <LinearLayout
+        android:id="@+id/contact_top_title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@id/contact_top_span1"
+        android:orientation="vertical"
+        android:paddingBottom="3dp"
+        android:paddingTop="2dp" >
+
+        <TextView
+            android:id="@+id/contact_top_title_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dip"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/contact_top_title_sever"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dip"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</RelativeLayout>

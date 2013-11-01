@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/dialog_confirm_text"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="请确认发送短信至：15298387110"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

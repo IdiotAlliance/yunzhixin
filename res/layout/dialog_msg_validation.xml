@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/translucent" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="450dp"
+        android:layout_centerVertical="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <!-- 按钮 -->
+
+        <LinearLayout
+            android:id="@+id/validation_btnarea"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/dialog_validation_cancel_btn"
+                android:layout_width="120dp"
+                android:layout_height="54dp"
+                android:background="@drawable/button_single_red"
+                android:text="@string/previous"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/dialog_validation_confirm_btn"
+                android:layout_width="170dp"
+                android:layout_height="54dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_single_blue"
+                android:text="@string/done"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+        <!-- 标题 -->
+
+        <ImageView
+            android:id="@+id/title"
+            android:layout_width="320dp"
+            android:layout_height="51.25dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/title_verify_regist"
+            android:contentDescription="@string/nil" />
+
+        <!-- 提示 -->
+
+        <LinearLayout
+            android:id="@+id/validation_tipsarea"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/dialog_msg_validation_phone_number"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:text="验证短信已发送至：15298387110"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <!-- 内容 -->
+
+        <LinearLayout
+            android:id="@+id/validation_inputarea"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/validation_tipsarea"
+            android:layout_marginTop="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/dialog_msg_validation_code_input"
+                style="@style/edittext_style1"
+                android:layout_width="304dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center_horizontal"
+                android:hint="请输入验证码"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <!-- 副按钮 -->
+
+        <RelativeLayout
+            android:id="@+id/validation_btnarea2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/validation_inputarea"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <Button
+                android:id="@+id/dialog_msg_validation_resend"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/button_single_gray"
+                android:text="@string/count_down_60"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

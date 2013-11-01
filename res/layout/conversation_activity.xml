@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/conversation_main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/light_blue_bg" >
+
+    <RelativeLayout
+        android:id="@+id/conversation_top_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/balck_bottom_horizontal" >
+
+        <!-- back键 -->
+
+        <com.dt.param.engine.component.ImageBtSingle
+            android:id="@+id/conversation_back_btn"
+            android:layout_width="48dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_top"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/conversation_top_span1"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@id/conversation_back_btn"
+            android:background="@drawable/black_background_span" />
+
+
+        <LinearLayout 
+            >
+            <com.dt.param.engine.component.ImageBtSpinner
+            android:id="@+id/conversation_dial_btn"
+            android:layout_width="48dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_top"
+            android:clickable="true"
+            android:focusable="true" />
+            
+        </LinearLayout>
+        
+
+        <ImageView
+            android:id="@+id/conversation_top_span2"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@id/conversation_dial_btn"
+            android:background="@drawable/black_background_span" />
+
+        <com.dt.param.engine.component.ImageBtSingle
+            android:id="@+id/conversation_switch_btn"
+            android:layout_width="48dp"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@id/conversation_top_span2"
+            android:background="@drawable/button_top"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/conversation_top_span3"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@id/conversation_switch_btn"
+            android:background="@drawable/black_background_span" />
+
+        <!-- 对方号码切换 -->
+
+        <com.dt.param.engine.component.ImageBtSpinner
+            android:id="@+id/phone_selector"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@id/conversation_top_span3"
+            android:layout_toRightOf="@id/conversation_top_span1"
+            android:background="@drawable/button_top"
+            android:clickable="true" 
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <!-- 我方当前号码显示 -->
+
+    <TextView
+        android:id="@+id/conversation_current_number"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:background="@color/white"
+        android:textSize="14dp" />
+
+    <!-- 分割 -->
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/shadow_span_horizontal" />
+
+    
+    <RelativeLayout
+        android:id="@+id/function_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/blue_bottombar"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <EditText
+            android:id="@+id/conversation_sendmessage"
+            style="@style/edittext_style2"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="54dp"
+            android:singleLine="false"
+            android:maxHeight="70dp"
+            android:paddingLeft="8dp"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="48dp"
+            android:background="@drawable/blue_background_span" />
+
+        <com.dt.param.engine.component.ImageBtSingle
+            android:id="@+id/conversation_send_btn"
+            android:layout_width="48dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_top"
+            android:clickable="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#0000"
+        android:divider="@null"
+        android:dividerHeight="5dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:stackFromBottom="true" />
+    
+</RelativeLayout>

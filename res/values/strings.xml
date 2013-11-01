@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, PARAM_CLIENTActivity!</string>
+    <string name="app_name">云通讯</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="done">完成</string>
+    <string name="choose_contact">选择联系人</string>
+    <string name="ungouped_zh">未分组</string>
+    <string name="wait_a_while">请稍候</string>
+    <string name="account">账户</string>
+    <string name="password">密码</string>
+    <string name="cpassword">确认密码</string>
+    <string name="read_n_agree">已阅读并同意</string>
+    <string name="use_rules_n_privaces">使用条款和隐私政策</string>
+    <string name="bitmap_validation_code">图片验证码</string>
+    <string name="cannt_see_clearly">看不清楚？</string>
+    <string name="resend_code">重新发送</string>
+    <string name="send_code">发送验证码</string>
+    <string name="forgot_password">忘记密码？</string>
+    <string name="change_success">修改密码成功！</string>
+    <string name="reg_success">恭喜您！注册成功！</string>
+    <string name="localhost">本机</string>
+    <string name="configuring">正在配置</string>
+    <string name="search_contact">搜索联系人</string>
+    <string name="number_already_added">已添加该号码</string>
+    <string name="next">下一步</string>
+    <string name="previous">上一步</string>
+    
+    <string name="hint_type_email">请输入邮箱</string>
+	<string name="hint_type_uname">请输入用户名</string>
+	<string name="hint_type_pword">请输入密码</string>
+	<string name="hint_type_pword_again">请再次输入密码</string>
+	<string name="hint_msg_code">验证码</string>
+    <string name="hint_img_code">请输入验证码</string>
+    <string name="hint_type_account">请输入您的账户</string>
+    <string name="hint_type_new_pass">请输入新密码</string>
+    <string name="hint_comfirm_new_pass">请确认新密码</string>
+	<string name="nil">nil</string>
+
+    <string name="label_account">账户：</string>
+    <string name="label_code">验证码：</string>
+    <string name="label_type_password">输入密码</string>
+    <string name="label_comfirm_password">确认密码</string>
+	
+	<!-- titles -->
+	<string name="title_msg_sent_to">短信将会发送到：</string>
+	<string name="title_waiting_msg">等待接受验证短信</string>
+	<string name="title_please_type_recaptcha">请输入验证码</string>
+
+    <!-- error messages -->
+    <string name="error_network_unusable">网络链接失败，请检查是否有可用的网络连接</string>
+    <string name="error_unknown">发生未知的错误</string>
+    <string name="error_empty_username">用户名不能为空</string>
+    <string name="error_empty_password">密码不能为空</string>
+    <string name="error_empty_code">验证码不能为空</string>
+    <string name="error_diff_pwords">两次输入的密码必须相同</string>
+    <string name="error_malformed_username">用户名必须是合法的手机号码</string>
+    <string name="error_malformed_code">验证码的格式错误</string>
+    <string name="error_uname_outof_range">用户名的长度须在6-16之间</string>
+    <string name="error_malformed_password">密码的长度须在6-16位之间</string>
+    <string name="error_connection_exception">链接时发生异常</string>
+    <string name="error_protocol_agreement">您必须同意用户协议才能注册</string>
+    <string name="error_invalid_code">无效的验证码</string>
+    <string name="error_broken_data">无效的数据</string>
+    <string name="error_please_signin_again">您的账户出现异常，请重新登陆</string>
+    <string name="error_empty_message">消息不能为空！</string>
+    <string name="error_invalid_number">无效的号码</string>
+
+    <!-- Intent messages -->
+    <string name="intent_http_forbidden">出错啦！服务器拒绝访问</string>
+    <string name="intent_http_notfound">出错啦！未找到指定的资源</string>
+    <string name="intent_http_timeout">连接超时</string>
+    <string name="intent_http_error">出现未知的错误，请稍候再试</string><string name="count_down_60">60秒后重新发送</string>
+</resources>

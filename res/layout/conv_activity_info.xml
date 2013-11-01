@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/conv_info_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/conv_info_static_info"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white" >
+
+        <ImageView
+            android:id="@+id/conv_info_status_icon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/server_online"
+            android:contentDescription="" />
+
+        <TextView
+            android:id="@+id/conv_info_static_text"
+            android:layout_width="240dp"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@id/conv_info_status_icon"
+            android:layout_marginRight="5dp"
+            android:ellipsize="end"
+            android:gravity="right|center"
+            android:singleLine="true"
+            android:text="15298387110"
+            android:textColor="@color/dark_gray"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/conv_info_msg_info"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/msg_blue"
+        android:gravity="left|center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/conv_info_msg_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:ellipsize="end"
+            android:gravity="left|center"
+            android:maxWidth="300dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contact_picker_main_layer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/list_gray" >
+
+    <!-- 消息编辑区 -->
+
+    <FrameLayout
+        android:id="@+id/contact_picker_function2_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true" />
+    <!-- 分割 -->
+
+    <ImageView
+        android:id="@+id/contact_picker_function2_area"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/contact_picker_function2_layout"
+        android:background="@drawable/shadow_span_horizontal_up" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/contact_picker_function2_area"
+        android:orientation="vertical" >
+
+        <!-- 顶栏 -->
+
+        <FrameLayout
+            android:id="@+id/contact_picker_top_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp" />
+
+        <!-- picked contact -->
+
+        <FrameLayout
+            android:id="@+id/contact_picker_picked_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp" />
+
+        <!-- contact输入栏 -->
+
+        <FrameLayout
+            android:id="@+id/contact_picker_function_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp" />
+
+        <!-- 分割 -->
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/shadow_span_horizontal" />
+        
+        <FrameLayout
+            android:id="@+id/contact_picker_list_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contact_function_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/light_blue_bottombar"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <!-- The contact box and switcher -->
+
+    <EditText
+        android:id="@+id/contact_function_search_box"
+        style="@style/edittext_style2"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="54dp"
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:hint="检索联系人/添加新号码"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_gray"/>
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="48dp"
+        android:background="@drawable/button_span_vertical" />
+
+    <com.dt.cloudmsg.component.ImageBtSingle
+        android:id="@+id/contact_function_add_btn"
+        android:layout_width="48dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_top"
+        android:clickable="true"
+        android:focusable="true" />
+
+</RelativeLayout>

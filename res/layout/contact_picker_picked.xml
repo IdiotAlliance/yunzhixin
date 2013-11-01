@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contact_picked_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/lightblue_container"
+    android:focusable="true"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:focusableInTouchMode="true" 
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/contact_picked_contact_container"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+            
+    </LinearLayout>
+
+</HorizontalScrollView>

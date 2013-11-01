@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contact_function2_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/light_blue_bottombar"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <EditText
+        android:id="@+id/contact_function2_msg_txt"
+        style="@style/edittext_style2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginTop="4dp"
+        android:lines="2"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="48dp"
+        android:background="@drawable/button_span_vertical" />
+
+    <com.dt.cloudmsg.component.ImageBtSingle
+        android:id="@+id/contact_function2_send_messsage"
+        android:layout_width="48dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_top"
+        android:clickable="true"
+        android:focusable="true" />
+
+</RelativeLayout>

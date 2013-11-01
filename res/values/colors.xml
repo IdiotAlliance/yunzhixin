@@ -1,0 +1,34 @@
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="dark_yellow">#ffad8000</color>
+    <!-- <color name="red">#ffff0000</color> -->
+    <color name="red">#ffc31110</color>
+    <color name="msg_blue">#ff62b5ea</color>
+    <color name="call_red">#ffd10404</color>
+    <color name="light_red">#ffbb4e51</color>
+    <color name="light_light_red">#ffdba7a8</color>
+    <color name="yellow_green">#ffaccd77</color>
+    <color name="light_green">#ff5f9251</color>
+    <color name="dark_green">#ff3e6223</color>
+    <color name="light_blue">#ff11848e</color>
+    <color name="light_purple">#ff8d5779</color>
+    <color name="dark_purple">#ff320056</color>
+    <color name="dark_blue">#ff464696</color>
+    <color name="light_pink">#eeffdddd</color>
+    <color name="gray">#ffb7caae</color>
+    <color name="dark_gray">#ff8c8c8c</color>
+    <color name="light_black">#ff3b3d3d</color>
+    <color name="black">#000000</color>
+    <color name="black_translucent">#4e000000</color>
+    <color name="light_gray">#ffb3b3b3</color>
+    <color name="hint_gray">#ffc8c8c8</color>
+    <color name="list_gray">#fff2f2f2</color>
+    <color name="light_blue_bg">#ffeff8fa</color>
+    <color name="translucent">#00000000</color>
+    <color name="info_red">#ffc60c0c</color>
+    <color name="info_yellow">#ffff9c00</color>
+	<color name="transparent_grey">#88b3b3b3</color>
+	
+    
+</resources>

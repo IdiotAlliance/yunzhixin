@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/translucent" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="450dp"
+        android:layout_centerVertical="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <!-- 按钮 -->
+
+        <LinearLayout
+            android:id="@+id/regist_btnarea"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/cancel_btn"
+                android:layout_width="120dp"
+                android:layout_height="54dp"
+                android:background="@drawable/button_single_red"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/confirm_btn"
+                android:layout_width="170dp"
+                android:layout_height="54dp"
+                android:layout_marginLeft="14dp"
+                android:background="@drawable/button_single_blue"
+                android:text="下一步"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <!-- 标题 -->
+
+        <ImageView
+            android:id="@+id/title"
+            android:layout_width="320dp"
+            android:layout_height="51.25dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/title_regist"
+            android:contentDescription="@string/nil" />
+        <!-- 内容 -->
+
+        <LinearLayout
+            android:id="@+id/regist_inputarea"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginTop="40dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <!-- 手机号 -->
+
+            <EditText
+                android:id="@+id/reg_username_input"
+                style="@style/edittext_style1"
+                android:layout_width="304dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center_horizontal"
+                android:hint="请输入手机号（中国大陆地区）"
+                android:inputType="phone"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"
+                android:textSize="18sp" />
+            <!-- 密码 -->
+
+            <EditText
+                android:id="@+id/reg_password_input"
+                style="@style/edittext_style1"
+                android:layout_width="304dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:hint="请输入密码"
+                android:password="true"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"
+                android:textSize="16sp" />
+            <!-- 确认密码 -->
+
+            <EditText
+                android:id="@+id/reg_pword_comfirm_input"
+                style="@style/edittext_style1"
+                android:layout_width="304dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:hint="请再次输入密码"
+                android:password="true"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"
+                android:textSize="16sp" />
+        </LinearLayout>
+        
+        
+        <!-- 政策 -->
+        <LinearLayout
+            android:id="@+id/regist_policyarea"
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:layout_below="@id/regist_inputarea"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/dialog_regist_checkbox"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/checkbox_black"
+                android:button="@drawable/checkbox_cover"
+                android:checked="true"
+                android:enabled="true" />
+
+            <TextView
+                android:id="@+id/dialog_register_policy_agreed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/read_n_agree"
+                android:textSize="16sp"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/dialog_regist_rules_privacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/use_rules_n_privaces"
+                android:textSize="16sp"
+                android:textColor="@color/light_black" />
+        </LinearLayout>
+
+        
+
+        
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_register_webview_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <WebView
+            android:id="@+id/dialog_register_webview"
+            android:layout_width="300dp"
+            android:layout_height="400dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/dialog_register_webview_dialog_comfirm"
+                android:layout_width="140dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_single_blue"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
