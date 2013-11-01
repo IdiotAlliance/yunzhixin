@@ -39,22 +39,12 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/res/layout/conversation_activity.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/res/layout/dialog_forgot_password2.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/res/layout/loading_content.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/BaseActivity.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/BaseActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/ChatMsgDAO.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/ChatMsgDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ChatMsgSource.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ChatMsgSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ContactsSource.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ContactsSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DeviceDAO.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DeviceDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/IntentConstants.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/IntentConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/MsgListDAO.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/MsgListDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/MsgListSource.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/MsgListSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/service/MyService.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/service/MyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/adapter/ServerListAdapter.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/adapter/ServerListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ServerSource.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ServerSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/SettingActivity.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/views/SettingActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/StringUtil.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/StringUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/msg_center_operation_selector.xml" afterPath="$PROJECT_DIR$/res/layout/msg_center_operation_selector.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/SystemConstants.java" afterPath="$PROJECT_DIR$/src/com/dt/cloudmsg/util/SystemConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/dexedLibs.xml" afterPath="$PROJECT_DIR$/.idea/libraries/dexedLibs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/dexedLibs2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/dexedLibs2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/dexedLibs3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/dexedLibs3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/libs5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/libs5.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="云通讯.iws" />
@@ -81,23 +71,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/gen/com/dt/cloudmsg/R.java" line="1" class="R.java" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -134,7 +108,23 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/gen/com/dt/cloudmsg/R.java" line="1" class="R.java" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -144,28 +134,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MsgCenterActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java">
+      <file leaf-file-name="SystemConstants.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/SystemConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="731" column="14" selection-start="29749" selection-end="29749" vertical-scroll-proportion="0.0" vertical-offset="9060" max-vertical-offset="13185">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="256" column="44" selection-start="8689" selection-end="8689" vertical-scroll-proportion="0.78571427" vertical-offset="2955" max-vertical-offset="18015">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/BaseActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="67" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="2550">
+            <state line="9" column="0" selection-start="433" selection-end="433" vertical-scroll-proportion="0.25" vertical-offset="30" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -189,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/SettingActivity.java" />
         <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/adapter/ServerListAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/ServerSource.java" />
         <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/dao/DeviceDAO.java" />
@@ -205,6 +176,7 @@
         <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/MsgCenterActivity.java" />
         <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/BaseActivity.java" />
         <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/dt/cloudmsg/util/SystemConstants.java" />
       </list>
     </option>
   </component>
@@ -212,10 +184,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-5" />
-    <option name="width" value="1303" />
-    <option name="height" value="774" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1301" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -243,6 +215,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -278,10 +251,6 @@
               <option name="myItemId" value="cloudmsg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -298,6 +267,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cloudmsg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -391,17 +364,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD2.2" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
@@ -639,7 +611,7 @@
     <option name="totallyTimeSpent" value="110561000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-5" width="1303" height="774" extended-state="6" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32749003" sideWeight="0.848" order="2" side_tool="false" content_ui="tabs" />
@@ -674,13 +646,13 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6171244" sideWeight="0.5004003" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3002402" sideWeight="0.21324718" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41357028" sideWeight="0.49960032" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32749003" sideWeight="0.84033614" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -759,18 +731,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/model/MsgListEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="462" selection-end="462" vertical-scroll-proportion="-1.9354838" vertical-offset="1395" max-vertical-offset="2625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/msg_center_operation_selector.xml">
       <provider editor-type-id="text-editor">
-        <state line="21" column="44" selection-start="804" selection-end="804" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2145">
-          <folding />
-        </state>
+        <state line="21" column="44" selection-start="804" selection-end="804" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2145" />
       </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -778,9 +741,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/ContactChooseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="63" selection-start="2088" selection-end="2088" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="11100">
-          <folding />
-        </state>
+        <state line="60" column="63" selection-start="2088" selection-end="2088" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="11100" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/IntentConstants.java">
@@ -802,9 +763,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/dao/ChatMsgDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="78" selection-start="2624" selection-end="2624" vertical-scroll-proportion="0.025466893" vertical-offset="930" max-vertical-offset="2430">
-          <folding />
-        </state>
+        <state line="71" column="78" selection-start="2624" selection-end="2624" vertical-scroll-proportion="0.025466893" vertical-offset="930" max-vertical-offset="2430" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/datasource/MsgListSource.java">
@@ -863,14 +822,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/BaseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="67" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2550">
-          <folding />
-        </state>
+        <state line="45" column="67" selection-start="1767" selection-end="1767" vertical-scroll-proportion="-3.5714285" vertical-offset="1890" max-vertical-offset="2550" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/views/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="256" column="44" selection-start="8689" selection-end="8689" vertical-scroll-proportion="0.78571427" vertical-offset="2955" max-vertical-offset="18015">
+        <state line="247" column="49" selection-start="8323" selection-end="8323" vertical-scroll-proportion="0.4642857" vertical-offset="2955" max-vertical-offset="18015">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dt/cloudmsg/util/SystemConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="433" selection-end="433" vertical-scroll-proportion="0.25" vertical-offset="30" max-vertical-offset="660">
           <folding />
         </state>
       </provider>

@@ -15,7 +15,7 @@ public class SystemConstants {
     public static final String PARAM_TOKEN = "token";
 
     // http constants
-    public static final String BASE_URL = "http://192.168.44.216:8080/cloudmsg/services";
+    public static final String BASE_URL = "http://210.209.70.43/Cloudmsg_Server/services";
 
     // account services
     public static final String URL_LOGIN    = "/account/login";
