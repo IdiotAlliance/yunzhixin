@@ -1,13 +1,15 @@
 <component name="libraryTable">
   <library name="libs">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/pinyin4j-2.5.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/libs/dom4j-2.0.0-ALPHA-2.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/org.hamcrest.core_1.1.0.v20090501071000.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/gcm.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/gson-2.2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jpush-sdk-release1.5.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/commons-codec-1.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/pushservice-2.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/dom4j-2.0.0-ALPHA-2.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/android-support-v4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/pinyin4j-2.5.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

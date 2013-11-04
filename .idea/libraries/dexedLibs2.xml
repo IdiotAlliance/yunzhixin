@@ -1,23 +1,12 @@
 <component name="libraryTable">
   <library name="dexedLibs">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/pinyin4j-2.5.0-1343d864ac6ff4b610611a1425f8be6e.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/org.hamcrest.core_1.1.0.v20090501071000-5a718cb98eb39981f015b24a63fa8674.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/dom4j-2.0.0-ALPHA-2-baa7cf074c05fdb160a603ffe20b2803.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gcm-453b9b87e5224da263dfa208448af1c1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gcm-df30822fd1ba0fa8f85d9f705b26ff65.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/android-support-v4-2b0100c6f4e44c0de461bc0caacc0900.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/pinyin4j-2.5.0-b59024b1070d650e79505713120620a5.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gson-2.2.4-c53e9dd2517b8a080d115052343518ec.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/jpush-sdk-release1.5.0-46952f42f74f6a2abc9caeddcaf9f030.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/dom4j-2.0.0-ALPHA-2-895791d1f26d9c2b295a7973a3501a47.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/android-support-v4-4b6bb364c331b4ae086235b1a938c588.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gson-2.2.4-b67b54564e619d74bf988694461cb95d.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/commons-codec-1.8-ceafadbafb1a76e688a2852d66ba6689.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/commons-codec-1.8-61d9c56312dd0a40c93d6aa81cb5df89.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/pushservice-2.4.0-685b49732b4d001cb98e0cb4bbab02a9.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/jpush-sdk-release1.5.0-b18ea77e0e39c501b65f51c1937ae89b.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/org.hamcrest.core_1.1.0.v20090501071000-b7d73ef0d0377e8379090a42109e13d5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/org.hamcrest.core_1.1.0.v20090501071000-e289efef4e8e78e9b9801cf603eb38c4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/pinyin4j-2.5.0-535f219b778a15fc39634fb9e343b00f.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/android-support-v4-6d2708cc5109009607b9cd83d2925c26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/dom4j-2.0.0-ALPHA-2-2b855896005f79744e5b0bc06dc64f0c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gcm-e5cd34a4df25538218bc80e5a65b8226.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/commons-codec-1.7-33400870afce8064ea1c159e490b3fe6.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

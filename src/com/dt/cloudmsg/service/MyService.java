@@ -148,6 +148,9 @@ public class MyService extends Service {
 
     private static final IntentFilter setBlackFilter = new IntentFilter(IntentConstants.INTENT_ACTION_SET_BLACK);
     private static BroadcastReceiver setBlackReceiver = null;
+
+    private static final IntentFilter deleteMsgFilter = new IntentFilter(IntentConstants.INTENT_ACTION_DELETE_MSG);
+    private static BroadcastReceiver deleteMsgReceiver = null;
     
     private static Timer heartBeatScheduler = null;
     private static ScheduledExecutorService ses = Executors.newScheduledThreadPool(1);
@@ -238,6 +241,7 @@ public class MyService extends Service {
         contactsLoadedReceiver = new ContactsLoadedReceiver();
         deleteSessionReceiver = new DeleteSessionReceiver();
         setBlackReceiver = new SetBlackReceiver();
+        deleteMsgReceiver = new DeleteMsgReceiver();
 
         this.registerReceiver(smsReceiver, smsFilter);
         this.registerReceiver(callReceiver, callFilter);
@@ -255,6 +259,7 @@ public class MyService extends Service {
         this.registerReceiver(contactsLoadedReceiver, contactsLoadedFilter);
         this.registerReceiver(deleteSessionReceiver, deleteSessionFilter);
         this.registerReceiver(setBlackReceiver, setBlackFilter);
+        this.registerReceiver(deleteMsgReceiver, deleteMsgFilter);
 
         // 开启极光推送服务
 //        startJPush();
@@ -290,7 +295,8 @@ public class MyService extends Service {
         if(contactsLoadedReceiver != null) this.unregisterReceiver(contactsLoadedReceiver);
         if(deleteSessionReceiver != null) this.unregisterReceiver(deleteSessionReceiver);
         if(setBlackReceiver != null) this.unregisterReceiver(setBlackReceiver);
-        
+        if(deleteMsgReceiver != null) this.unregisterReceiver(deleteMsgReceiver);
+
         //stopJPush();
         stopBDPush();
         if(isServerOn)
@@ -521,6 +527,9 @@ public class MyService extends Service {
         }
     }
 
+    /****
+     * 删除绘画的广播接收器
+     */
     private class DeleteSessionReceiver extends BroadcastReceiver{
 
         @Override
@@ -530,6 +539,46 @@ public class MyService extends Service {
                 String target = intent.getStringExtra(IntentConstants.KEY_INTENT_SVC_TARGET);
                 msgListDAO.delete(account.getAccountName(), source, target);
                 chatMsgDAO.delete(account.getAccountName(), source, target);
+            }
+        }
+    }
+
+    /****
+     * 删除消息的广播接收器
+     */
+    private class DeleteMsgReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(intent.getAction().equals(IntentConstants.INTENT_ACTION_DELETE_MSG)){
+                long id = intent.getLongExtra(IntentConstants.KEY_INTENT_CHAT_MSGID, -1);
+                Log.d(TAG, "delete msg with id:" + id);
+                if(id >= -1){
+                    ChatMsgEntity entity = chatMsgDAO.getById(id);
+                    chatMsgDAO.deleteById(id);
+                    // 更新主消息列表
+                    String source = null;
+                    String target = null;
+                    if(entity.isComMsg()){
+                        source = entity.getToNumber();
+                        target = entity.getComNumber();
+                    } else{
+                        source = entity.getComNumber();
+                        target = entity.getToNumber();
+                    }
+                    ChatMsgEntity latest = chatMsgDAO.getLatest(account.getAccountName(), source, target);
+                    if(latest != null){
+                        MsgListEntity msgListEntity = msgListDAO.getEntity(account.getAccountName(), source, target);
+                        msgListEntity.setCount(msgListEntity.getCount() - 1);
+                        msgListEntity.setRtime(latest.getRawtime());
+                        msgListEntity.setStime(latest.getServertime());
+                        msgListEntity.setLastMsg(latest.getBody().getMsg());
+                        msgListDAO.update(msgListEntity);
+                    }else {
+                        // 会话已被清空
+                        msgListDAO.delete(account.getAccountName(), source, target);
+                    }
+                }
             }
         }
     }

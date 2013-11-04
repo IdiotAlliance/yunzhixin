@@ -19,7 +19,9 @@ import android.view.View.OnClickListener;
 
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -76,17 +78,19 @@ public class ChatMsgViewAdapter extends BaseAdapter implements
 		return 2;
 	}
 
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 
 		ChatMsgEntity entity = (ChatMsgEntity) getItem(position);
 		boolean isComMsg = entity.isComMsg();
 		int msgType = entity.getType();
 		ViewHolder viewHolder = new ViewHolder();
-		if (convertView == null) {
+		if (convertView == null || ((ViewHolder)convertView.getTag()).isCom != isComMsg) {
 			if (isComMsg) {
 				if (msgType == MessageBean.TYPE_MSG_CAL_MISS) {
-					convertView = LayoutInflater.from(context).inflate(
-							R.layout.chatting_item_call_text_left, null);
+                    convertView = LayoutInflater.from(context).inflate(
+                            R.layout.chatting_item_call_text_left, null);
+                    viewHolder.content = (LinearLayout) convertView
+                            .findViewById(R.id.chat_msg_content);
 					viewHolder.tvSendTime = (TextView) convertView
 							.findViewById(R.id.chat_call_tv_sendtime);
 					viewHolder.tvCallhead = (TextView) convertView
@@ -96,8 +100,10 @@ public class ChatMsgViewAdapter extends BaseAdapter implements
 					viewHolder.callBtn = (ImageBtSingle) convertView
 							.findViewById(R.id.chat_call_call_btn);
 				} else {
-					convertView = LayoutInflater.from(context).inflate(
-							R.layout.chatting_item_msg_text_left, null);
+                    convertView = LayoutInflater.from(context).inflate(
+                            R.layout.chatting_item_msg_text_left, null);
+                    viewHolder.content = (LinearLayout) convertView
+                            .findViewById(R.id.chat_msg_content);
 					viewHolder.tvSendTime = (TextView) convertView
 							.findViewById(R.id.chat_left_tv_sendtime);
 					viewHolder.tvContent = (TextView) convertView
@@ -106,6 +112,8 @@ public class ChatMsgViewAdapter extends BaseAdapter implements
 			} else {
 				convertView = LayoutInflater.from(context).inflate(
 						R.layout.chatting_item_msg_text_right, null);
+                viewHolder.content = (LinearLayout) convertView
+                        .findViewById(R.id.chat_msg_content);
 				viewHolder.tvSendTime = (TextView) convertView
 						.findViewById(R.id.chat_right_tv_sendtime);
 				viewHolder.tvContent = (TextView) convertView
@@ -119,6 +127,22 @@ public class ChatMsgViewAdapter extends BaseAdapter implements
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
+
+        viewHolder.content.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Intent intent = new Intent(IntentConstants.INTENT_ACTION_MSG_LONG_CLICKED);
+                int[] location = new int[2];
+                view.getLocationInWindow(location);
+                intent.putExtra(IntentConstants.KEY_INTENT_CHAT_POSITION, position);
+                intent.putExtra(IntentConstants.KEY_INTENT_CHAT_POS_X, location[0]);
+                intent.putExtra(IntentConstants.KEY_INTENT_CHAT_POS_Y, location[1]);
+                intent.putExtra(IntentConstants.KEY_INTENT_CHAT_HEIGHT, view.getHeight());
+                intent.putExtra(IntentConstants.KEY_INTENT_CHAT_WIDTH, view.getWidth());
+                context.sendBroadcast(intent);
+                return true;
+            }
+        });
 
 		viewHolder.tvSendTime.setText(DateFormatter.getLocalDate(entity.getRawtime(), DateFormatter.DATE_FOR_CHATMSG));
 
@@ -169,6 +193,7 @@ public class ChatMsgViewAdapter extends BaseAdapter implements
 	}
 
 	static class ViewHolder {
+        public LinearLayout content;
 		public TextView tvSendTime;
 		public TextView tvUserName;
 		public TextView tvContent;
@@ -177,6 +202,7 @@ public class ChatMsgViewAdapter extends BaseAdapter implements
 		public TextView sending;
 		public TextView sendFail;
 		public ImageBtSingle callBtn;
+        public boolean isCom;
 	}
 
 	@Override

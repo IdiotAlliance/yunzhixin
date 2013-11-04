@@ -117,7 +117,6 @@ public class StringUtil {
             String shouzimu = "";
             for(String result: results)
                 shouzimu += result;
-            Log.d("StringUtil", str + "的首字母是：" + shouzimu);
             return shouzimu.toLowerCase();
         }
         return null;

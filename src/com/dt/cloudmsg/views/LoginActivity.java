@@ -393,7 +393,6 @@ public class LoginActivity extends BaseActivity{
                 regUsernameInputView.setText("");
                 regPasswordInputView.setText("");
                 regPasswordToInputView.setText("");
-                rulesCheckbox.setChecked(false);
 			}
 
 		});

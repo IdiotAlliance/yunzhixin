@@ -18,6 +18,9 @@ public class ChatMsgSource extends AbstractDataSource<ChatMsgEntity>{
     private String account; // 当前使用的账户
     private String target; // 对话的联系人号码
     private String source; // 对话来源的设备号码
+    private int DEFAULT_NUM = 25; // 默认加载25条
+    private int LOAD_NUM    = 15; // 单次加载15条
+    private long oldts = 0; // 当前加载的最老的时间戳
 
     private List<ChatMsgEntity> msgList = new ArrayList<ChatMsgEntity>();
 
@@ -120,26 +123,45 @@ public class ChatMsgSource extends AbstractDataSource<ChatMsgEntity>{
                             " WHERE " + ChatMsgDAO._ACCOUNT + "=? AND " +
                             "((" + ChatMsgDAO._TO + "=? AND " + ChatMsgDAO._FROM + "=?)" + " OR (" +
                                    ChatMsgDAO._TO + "=? AND " + ChatMsgDAO._FROM + "=?))" +
-                            " order by " + ChatMsgDAO._STIME + " asc"
+                            " order by " + ChatMsgDAO._STIME + " desc LIMIT " + DEFAULT_NUM
                     , new String[]{account, target, source, source, target});
             while(cursor.moveToNext()){
-                ChatMsgEntity entity = new ChatMsgEntity();
-                entity.set_id(cursor.getInt(cursor.getColumnIndex(ChatMsgDAO._ID)));
-                entity.setStatus(cursor.getInt(cursor.getColumnIndex(ChatMsgDAO._STATUS)));
-                entity.setMsgId(cursor.getInt(cursor.getColumnIndex(ChatMsgDAO._MSGID)));
-                entity.setRawtime(cursor.getLong(cursor.getColumnIndex(ChatMsgDAO._RTIME)));
-                entity.setServertime(cursor.getLong(cursor.getColumnIndex(ChatMsgDAO._STIME)));
-                entity.setAccount(cursor.getString(cursor.getColumnIndex(ChatMsgDAO._ACCOUNT)));
-                entity.setType(cursor.getInt(cursor.getColumnIndex(ChatMsgDAO._TYPE)));
-                entity.setComMsg(cursor.getInt(cursor.getColumnIndex(ChatMsgDAO._COME)) == 1);
-                entity.setComNumber(cursor.getString(cursor.getColumnIndex(ChatMsgDAO._FROM)));
-                entity.setToNumber(cursor.getString(cursor.getColumnIndex(ChatMsgDAO._TO)));
-                entity.setBody(JsonUtil.fromJson(cursor.getString(cursor.getColumnIndex(ChatMsgDAO._BODY)),
-                        MessageBean.BaseBody.class));
+                ChatMsgEntity entity = getChatMsgEntity(cursor);
                 Log.d("msg loaded", entity.getBody().getMsg());
-                msgList.add(entity);
+                msgList.add(0, entity);
             }
             cursor.close();
+            if(msgList.size() > 0)
+                oldts = msgList.get(0).getServertime();
+            else
+                oldts = System.currentTimeMillis();
+        }
+    }
+
+    /***
+     * 加载更多
+     */
+    public void loadMore(){
+        if(account != null && source != null && target != null){
+            Cursor cursor = this.db.rawQuery(
+                    "SELECT * FROM " + ChatMsgDAO.TABLE_NAME +
+                            " WHERE " + ChatMsgDAO._ACCOUNT + "=? AND " +
+                                        ChatMsgDAO._STIME + "<? AND " +
+                            "((" + ChatMsgDAO._TO + "=? AND " + ChatMsgDAO._FROM + "=?)" + " OR (" +
+                            ChatMsgDAO._TO + "=? AND " + ChatMsgDAO._FROM + "=?))" +
+                            " order by " + ChatMsgDAO._STIME + " desc LIMIT " + LOAD_NUM
+                    , new String[]{account, oldts + "", target, source, source, target});
+            while(cursor.moveToNext()){
+                ChatMsgEntity entity = getChatMsgEntity(cursor);
+                Log.d("msg loaded", entity.getBody().getMsg());
+                msgList.add(0, entity);
+            }
+            cursor.close();
+            if(msgList.size() > 0)
+                oldts = msgList.get(0).getServertime();
+            else
+                oldts = System.currentTimeMillis();
+            notifyChange();
         }
     }
 
@@ -147,5 +169,25 @@ public class ChatMsgSource extends AbstractDataSource<ChatMsgEntity>{
         return entity.getAccount().equals(account) &&
                 ((entity.getComNumber().equals(target) && entity.getToNumber().equals(source)) ||
                  (entity.getToNumber().equals(target) && entity.getComNumber().equals(source)));
+    }
+
+    private ChatMsgEntity getChatMsgEntity(Cursor cursor){
+        if(cursor != null){
+            ChatMsgEntity entity = new ChatMsgEntity();
+            entity.set_id(cursor.getInt(cursor.getColumnIndex(ChatMsgDAO._ID)));
+            entity.setStatus(cursor.getInt(cursor.getColumnIndex(ChatMsgDAO._STATUS)));
+            entity.setMsgId(cursor.getInt(cursor.getColumnIndex(ChatMsgDAO._MSGID)));
+            entity.setRawtime(cursor.getLong(cursor.getColumnIndex(ChatMsgDAO._RTIME)));
+            entity.setServertime(cursor.getLong(cursor.getColumnIndex(ChatMsgDAO._STIME)));
+            entity.setAccount(cursor.getString(cursor.getColumnIndex(ChatMsgDAO._ACCOUNT)));
+            entity.setType(cursor.getInt(cursor.getColumnIndex(ChatMsgDAO._TYPE)));
+            entity.setComMsg(cursor.getInt(cursor.getColumnIndex(ChatMsgDAO._COME)) == 1);
+            entity.setComNumber(cursor.getString(cursor.getColumnIndex(ChatMsgDAO._FROM)));
+            entity.setToNumber(cursor.getString(cursor.getColumnIndex(ChatMsgDAO._TO)));
+            entity.setBody(JsonUtil.fromJson(cursor.getString(cursor.getColumnIndex(ChatMsgDAO._BODY)),
+                    MessageBean.BaseBody.class));
+            return entity;
+        }
+        return null;
     }
 }

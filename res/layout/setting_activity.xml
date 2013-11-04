@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/setting_layer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/list_gray"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/setting_top_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/shadow_span_horizontal" />
+
+    <FrameLayout
+        android:id="@+id/setting_function_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </FrameLayout>
+
+</LinearLayout>

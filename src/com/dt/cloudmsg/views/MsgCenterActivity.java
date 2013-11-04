@@ -728,7 +728,12 @@ public class MsgCenterActivity extends BaseActivity {
             // back键
             if (operation_selector.isShown()){
                 operation_selector.setVisibility(View.INVISIBLE);
-            } else if (functionState == STATE_SEARCH) { // 如果是search模式 ，则先恢复普通模式
+                return true;
+            }else if(server_selector.isShown()){
+                server_selector.setVisibility(View.INVISIBLE);
+                return true;
+            }
+            else if (functionState == STATE_SEARCH) { // 如果是search模式 ，则先恢复普通模式
                 setFunctionState(STATE_NORMAL);
                 return true;
             } else if ((System.currentTimeMillis() - exitTime) > 2000) { // 连按两次退出

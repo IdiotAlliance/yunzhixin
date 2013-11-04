@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/setting_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/operation_bg"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" >
+
+            <RelativeLayout
+                android:id="@+id/setting_sever_config"
+                android:layout_width="fill_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/list_item_bg_blue"
+                android:clickable="true" >
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/arrow_right_gray" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="18dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/setting_sever_config_tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="消息同步设置"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/setting_sever_config_tv_msgdesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:gravity="left"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="短信转发：开启	短信回执：开启"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/setting_sever_config_tv_calldesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:gravity="left"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="来电转发：开启	来电回执：开启"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/setting_content_sapn_horizontal" />
+
+            <RelativeLayout
+                android:id="@+id/setting_sever_onoff"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center" >
+
+                    <ToggleButton
+                        android:id="@+id/setting_sever_toggle"
+                        android:layout_width="54dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/toggle_selector"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="14dp"
+                        android:paddingRight="14dp"
+                        android:textColor="#ffffff"
+                        android:textOff="关"
+                        android:textOn="开" />
+
+                    <ImageButton
+                        android:id="@+id/setting_sever_toggle_btn"
+                        android:layout_width="32dp"
+                        android:layout_height="24dp"
+                        android:layout_alignRight="@id/setting_sever_toggle"
+                        android:background="@drawable/progress_thumb_selector" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/setting_sever_onoff_tv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="54dp"
+                    android:focusable="false"
+                    android:gravity="center|left"
+                    android:singleLine="true"
+                    android:text="消息同步"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/operation_bg"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" >
+
+            <RelativeLayout
+                android:id="@+id/setting_account_status"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/list_item_bg_blue"
+                android:clickable="true" >
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/arrow_right_gray" />
+
+                <TextView
+                    android:id="@+id/setting_account_status_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="账号状态"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/setting_content_sapn_horizontal" />
+
+            <RelativeLayout
+                android:id="@+id/setting_black_list"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/list_item_bg_blue"
+                android:clickable="true" >
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/arrow_right_gray" />
+
+                <TextView
+                    android:id="@+id/setting_black_list_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="黑名单"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/setting_content_sapn_horizontal" />
+
+            <RelativeLayout
+                android:id="@+id/setting_push_onoff"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center" >
+
+                    <ToggleButton
+                        android:id="@+id/setting_push_toggle"
+                        android:layout_width="54dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/toggle_selector"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="14dp"
+                        android:paddingRight="14dp"
+                        android:textColor="#ffffff"
+                        android:textOff="关"
+                        android:textOn="开" />
+
+                    <ImageButton
+                        android:id="@+id/setting_push_toggle_btn"
+                        android:layout_width="32dp"
+                        android:layout_height="24dp"
+                        android:layout_alignRight="@id/setting_sever_toggle"
+                        android:background="@drawable/progress_thumb_selector" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/setting_push_onoff_tv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="54dp"
+                    android:focusable="false"
+                    android:gravity="center|left"
+                    android:singleLine="true"
+                    android:text="接收其他设备推送"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/operation_bg"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" >
+
+            <RelativeLayout
+                android:id="@+id/setting_about_us"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/list_item_bg_blue"
+                android:clickable="true" >
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/arrow_right_gray" />
+
+                <TextView
+                    android:id="@+id/setting_about_us_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="关于我们"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/setting_content_sapn_horizontal" />
+
+            <RelativeLayout
+                android:id="@+id/setting_give_suggestion"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/list_item_bg_blue"
+                android:clickable="true" >
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/arrow_right_gray" />
+
+                <TextView
+                    android:id="@+id/setting_give_suggestion_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="意见反馈"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/setting_content_sapn_horizontal" />
+
+            <RelativeLayout
+                android:id="@+id/setting_check_update"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/list_item_bg_blue"
+                android:clickable="true" >
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/arrow_right_gray" />
+
+                <TextView
+                    android:id="@+id/setting_check_update_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="检查更新"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="304dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_single_red"
+            android:text="注销登陆"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</ScrollView>

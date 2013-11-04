@@ -4,12 +4,16 @@ import java.util.ArrayList;
 
 import com.dt.cloudmsg.R;
 import com.dt.cloudmsg.adapter.ChatMsgViewAdapter;
+import com.dt.cloudmsg.beans.MessageBean;
 import com.dt.cloudmsg.component.ImageBtSingle;
+import com.dt.cloudmsg.component.PullToRefreshListView;
 import com.dt.cloudmsg.datasource.ChatMsgSource;
 import com.dt.cloudmsg.datasource.ServerSource;
+import com.dt.cloudmsg.model.ChatMsgEntity;
 import com.dt.cloudmsg.service.MyService;
 import com.dt.cloudmsg.util.HandleTimer;
 import com.dt.cloudmsg.util.IntentConstants;
+import com.dt.cloudmsg.util.WidgetsUtil;
 
 
 import android.app.AlertDialog;
@@ -24,13 +28,18 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.ClipboardManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AbsoluteLayout;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -41,6 +50,8 @@ import android.widget.Toast;
 
 public class ConversationActivity extends BaseActivity {
 
+    private static final String TAG = ConversationActivity.class.getName();
+
     private ChatMsgSource chatMsgSource;
     private ServerSource serverSource;
 	private String newestMsg;
@@ -50,6 +61,7 @@ public class ConversationActivity extends BaseActivity {
     private String source;
     private String target;
     private String name;
+    private ChatMsgEntity selectedEntity;
 
 	private RelativeLayout main_content;
 
@@ -60,6 +72,8 @@ public class ConversationActivity extends BaseActivity {
 	private RelativeLayout top_frame;
 	private RelativeLayout info_frame;
 	private RelativeLayout function_frame;
+    private AbsoluteLayout operation_container;
+    private LinearLayout operation_panel;
 
 	private EditText message_txt;
 
@@ -70,14 +84,18 @@ public class ConversationActivity extends BaseActivity {
 	private ImageBtSingle send_message;
     private TextView serverNumber;
     private TextView serverName;
+    private TextView deleteMsg;
+    private TextView copyContent;
+    private TextView viewDetail;
 
     private ChatMsgViewAdapter chatMsgViewAdapter;
-	private ListView msgList;
+	private PullToRefreshListView msgList;
     private ListView serverList;// 主机列表;
 	
 	private HandleTimer infoTimer;
     private BroadcastReceiver scrollReceiver;
-    
+    private BroadcastReceiver onItemLongClickedReceiver;
+
     public static final int MAKE_CALL = 0x00;
     public static final int SEVER_SWITCH = 0x01;
     
@@ -104,7 +122,9 @@ public class ConversationActivity extends BaseActivity {
 		initInfrastructure();
 
         scrollReceiver = new ScrollToBottomReceiver();
+        onItemLongClickedReceiver = new OnItemLongClickReceiver();
         this.registerReceiver(scrollReceiver, new IntentFilter(IntentConstants.INTENT_ACTION_SCROLL_TO_BOTTOM));
+        this.registerReceiver(onItemLongClickedReceiver, new IntentFilter(IntentConstants.INTENT_ACTION_MSG_LONG_CLICKED));
         handler = new Handler(this);
 	}
 
@@ -133,6 +153,7 @@ public class ConversationActivity extends BaseActivity {
     public void onDestroy() {
         super.onDestroy();
         if(scrollReceiver != null) this.unregisterReceiver(scrollReceiver);
+        if(onItemLongClickedReceiver != null) this.unregisterReceiver(onItemLongClickedReceiver);
     }
 
 
@@ -148,6 +169,7 @@ public class ConversationActivity extends BaseActivity {
 		initTopLayer();
 		initInfoLayer();
 		initMsgList();
+        initOperationPanel();
 
 		registerForContextMenu(main_content);
 	}
@@ -234,13 +256,20 @@ public class ConversationActivity extends BaseActivity {
 	}
 
 	private void initMsgList() {
-		msgList = (ListView) findViewById(R.id.conv_activity_listview);
+		msgList = (PullToRefreshListView) findViewById(R.id.conv_activity_listview);
         chatMsgSource = MyService.getChatMsgSource(source, target);
         chatMsgViewAdapter = new ChatMsgViewAdapter(this, chatMsgSource,target);
         msgList.setAdapter(chatMsgViewAdapter);
 		msgList.setCacheColorHint(Color.TRANSPARENT);
 		msgList.requestFocus();
         msgList.setSelection(chatMsgViewAdapter.getCount() - 1);
+        msgList.setOnRefreshListener(new PullToRefreshListView.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                chatMsgSource.loadMore();
+                msgList.onRefreshComplete();
+            }
+        });
 	}
 
 	private void initFunctionLayer() {
@@ -300,6 +329,50 @@ public class ConversationActivity extends BaseActivity {
 
 	}
 
+    private void initOperationPanel(){
+
+        operation_container = (AbsoluteLayout) this.findViewById(R.id.conv_activity_operation_container);
+        operation_panel = (LinearLayout) this.findViewById(R.id.conv_activity_opertation_panel);
+        deleteMsg = (TextView) this.findViewById(R.id.conv_activity_delete_msg);
+        copyContent = (TextView) this.findViewById(R.id.conv_activity_copy_content);
+        //viewDetail = (TextView) this.findViewById(R.id.conv_activity_view_detail);
+        operation_container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                operation_container.setVisibility(View.INVISIBLE);
+            }
+        });
+        deleteMsg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(selectedEntity != null){
+                    // 发送广播要求删除消息
+                    Intent intent = new Intent(IntentConstants.INTENT_ACTION_DELETE_MSG);
+                    intent.putExtra(IntentConstants.KEY_INTENT_CHAT_MSGID, selectedEntity.get_id());
+                    sendBroadcast(intent);
+                }
+                operation_container.setVisibility(View.INVISIBLE);
+            }
+        });
+        copyContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(selectedEntity != null){
+                    ClipboardManager cmb = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                    cmb.setText(selectedEntity.getBody().getMsg());
+                    showToast(ConversationActivity.this, R.string.content_copied, Toast.LENGTH_LONG);
+                }
+                operation_container.setVisibility(View.INVISIBLE);
+            }
+        });
+//        viewDetail.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
+    }
+
 	//设置info栏的显示文字
 	private void setInfo() {
 		((TextView) info_frame.findViewById(R.id.conv_info_static_text))
@@ -355,7 +428,6 @@ public class ConversationActivity extends BaseActivity {
 				                } catch (Exception e) {
 				                    Log.e("SampleApp", "Failed to invoke call", e);
 				                }
-
 							}
 						})
 						.setNegativeButton("取消",
@@ -456,5 +528,68 @@ public class ConversationActivity extends BaseActivity {
         }
     }
     
+    private class OnItemLongClickReceiver extends BroadcastReceiver{
 
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(intent.getAction().equals(IntentConstants.INTENT_ACTION_MSG_LONG_CLICKED)){
+                int position = intent.getIntExtra(IntentConstants.KEY_INTENT_CHAT_POSITION, -1);
+                if(position >=0 ){
+                    selectedEntity = (ChatMsgEntity) chatMsgViewAdapter.getItem(position);
+                    if(selectedEntity.getType() == MessageBean.TYPE_MSG_CAL_MISS){
+                        copyContent.setClickable(false);
+                        copyContent.setTextColor(getResources().getColor(R.color.dark_gray));
+                    }else {
+                        copyContent.setClickable(true);
+                        copyContent.setTextColor(getResources().getColor(R.color.black));
+                    }
+                    int x = intent.getIntExtra(IntentConstants.KEY_INTENT_CHAT_POS_X, 0);
+                    int y = intent.getIntExtra(IntentConstants.KEY_INTENT_CHAT_POS_Y, 0);
+                    int h = intent.getIntExtra(IntentConstants.KEY_INTENT_CHAT_HEIGHT, 0);
+                    int w = intent.getIntExtra(IntentConstants.KEY_INTENT_CHAT_WIDTH, 0);
+                    Log.d(TAG, "x:" + x + " y:" + y + " h:" + h + " w:" + w);
+                    int width  = operation_panel.getWidth();
+                    int height = operation_panel.getHeight();
+                    int status = WidgetsUtil.getStatusBarHeight(ConversationActivity.this);
+                    Log.d(TAG, "width:" + width + " height:" + height + " status:" + status);
+                    // 获取屏幕高度
+                    DisplayMetrics metric = new DisplayMetrics();
+                    getWindowManager().getDefaultDisplay().getMetrics(metric);
+                    int screenHeight = metric.heightPixels;
+                    y = y - status;
+                    // 计算x, 22是小角的偏移量
+                    x = (x + w) / 2 - width / 2 + 22;
+                    if(x < 22) x = 22;
+
+                    // 计算y
+                    if(y + h + height <= screenHeight / 2){
+                        // 放在下方
+                        y = y + h;
+                    }
+                    else if(y >= screenHeight / 2){
+                        // 放在上方
+                        y = y - height;
+                    }
+                    else if(y >= (screenHeight - y - h) && y >= height){
+                        // 放在上方
+                        y = y - height;
+                    }
+                    else if(y < (screenHeight - y - h) && (screenHeight - y - h) >= height){
+                        // 放在下方
+                        y = y + height;
+                    }
+                    else {
+                        // 放在中间
+                        y = (y + h - height) / 2;
+                    }
+                    AbsoluteLayout.LayoutParams params = new AbsoluteLayout.LayoutParams(
+                            AbsoluteLayout.LayoutParams.WRAP_CONTENT,
+                            AbsoluteLayout.LayoutParams.WRAP_CONTENT,
+                            x,y);
+                    operation_panel.setLayoutParams(params);
+                    operation_container.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+    }
 }

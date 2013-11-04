@@ -103,6 +103,37 @@ public class ChatMsgDAO extends AbstractDAO<ChatMsgEntity>{
         return entity;
     }
 
+    /****
+     * 获取指定账户下指定服务器与目标号码最近的一次消息内容
+     * @param account
+     * @param source
+     * @param target
+     * @return
+     */
+    public ChatMsgEntity getLatest(String account, String source, String target){
+        Cursor cursor = this.db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE _account=? and " +
+                                         "((_from=? and _to=?) or (_from=? and _to=?)) " +
+                                         "ORDER BY _stime DESC LIMIT 1", new String[]{account, source, target, target, source});
+        ChatMsgEntity entity = null;
+        if(cursor.moveToNext()){
+            entity = new ChatMsgEntity();
+            entity.setAccount(cursor.getString(cursor.getColumnIndex("_account")));
+            entity.setStatus(cursor.getInt(cursor.getColumnIndex("_status")));
+            entity.setComMsg(cursor.getInt(cursor.getColumnIndex("_come")) == 1);
+            entity.setRawMsg(cursor.getString(cursor.getColumnIndex("_body")));
+            entity.setType(cursor.getInt(cursor.getColumnIndex("_type")));
+            entity.setToNumber(cursor.getString(cursor.getColumnIndex("_to")));
+            entity.setComNumber(cursor.getString(cursor.getColumnIndex("_from")));
+            entity.setRawtime(cursor.getLong(cursor.getColumnIndex("_rtime")));
+            entity.setServertime(cursor.getLong(cursor.getColumnIndex("_stime")));
+            entity.setMsgId(cursor.getInt(cursor.getColumnIndex("_msgId")));
+            entity.setBody(JsonUtil.fromJson(entity.getRawMsg(), MessageBean.BaseBody.class));
+            entity.set_id(cursor.getLong(cursor.getColumnIndex(_ID)));
+        }
+        cursor.close();
+        return entity;
+    }
+
     @Override
     public void addOrUpdate(ChatMsgEntity chatMsgEntity) {
         if(exists(chatMsgEntity.get_id()))
@@ -139,10 +170,13 @@ public class ChatMsgDAO extends AbstractDAO<ChatMsgEntity>{
                                          " WHERE _stime NOT IN(" +
                                          "SELECT M1._stime FROM chatmsgs as M1, chatmsgs as M2 WHERE " +
                                          " M1._stime < M2._stime)", null);
+        long time = 0;
         if(cursor.moveToNext()){
-            return cursor.getLong(cursor.getColumnIndex(_STIME));
-        }
-        return System.currentTimeMillis();
+            time = cursor.getLong(cursor.getColumnIndex(_STIME));
+        }else
+            time = System.currentTimeMillis();
+        cursor.close();
+        return time;
     }
 
     public void setFail(long id){

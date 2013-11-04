@@ -3,7 +3,10 @@
     android:id="@+id/conv_activity_main_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/list_gray" >
+    android:background="@color/list_gray"
+    android:layout_gravity="center"
+    android:gravity="center"
+        >
 
     <!-- 功能栏 -->
 
@@ -50,7 +53,7 @@
 
         <!-- 消息列表 -->
 
-        <ListView
+        <com.dt.cloudmsg.component.PullToRefreshListView
             android:id="@+id/conv_activity_listview"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
@@ -58,5 +61,52 @@
             android:divider="@null"
             android:scrollbarStyle="outsideOverlay" />
     </LinearLayout>
+
+    <AbsoluteLayout
+        android:id="@+id/conv_activity_operation_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible"
+        >
+        <LinearLayout
+                android:id="@+id/conv_activity_opertation_panel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/operation_bg"
+                android:paddingLeft="16dp"
+                android:padding="10dp"
+                android:gravity="center"
+                >
+            <TextView
+                    android:id="@+id/conv_activity_delete_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delete_msg"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:padding="5dp"
+                    />
+            <ImageView
+                android:id="@+id/conv_activity_del_cp_span"
+                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:background="@drawable/list_span_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                    />
+            <TextView
+                    android:id="@+id/conv_activity_copy_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/copy_content"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:padding="5dp"
+                    />
+        </LinearLayout>
+
+        </AbsoluteLayout>
+
 
 </RelativeLayout>

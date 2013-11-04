@@ -4,6 +4,8 @@ import org.dom4j.xpp.ProxyXmlStartTag;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import cn.jpush.android.api.PushNotificationBuilder;
+
 public class IntentConstants {
 
 	public enum IntentCode{
@@ -49,6 +51,12 @@ public class IntentConstants {
     public static final String KEY_INTENT_CHAT_SOURCES = "intent_chat_sources";
     public static final String KEY_INTENT_CHAT_TARGETS = "intent_chat_targets";
     public static final String KEY_INTENT_CHAT_MSG     = "intent_chat_msg";
+    public static final String KEY_INTENT_CHAT_POSITION = "intent_chat_position";
+    public static final String KEY_INTENT_CHAT_POS_X   = "intent_chat_pos_x";
+    public static final String KEY_INTENT_CHAT_POS_Y   = "intent_chat_pos_y";
+    public static final String KEY_INTENT_CHAT_HEIGHT  = "intent_chat_height";
+    public static final String KEY_INTENT_CHAT_WIDTH  = "intent_chat_width";
+    public static final String KEY_INTENT_CHAT_MSGID   = "intent_chat_msgid";
 
     public static final String KEY_INTENT_MSG_CONTACT_SERVER = "intent_msg_contact_number";
     public static final String KEY_INTENT_MSG_CONTACT_IMEI   = "intent_msg_contact_imei";
@@ -86,4 +94,7 @@ public class IntentConstants {
     public static final String INTENT_ACTION_DELETE_SESSION = "com.dt.cloudmsg.delete.session";
     public static final String INTENT_ACTION_SET_BLACK = "com.dt.cloudmsg.set.black";
     public static final String INTENT_ACTION_CONTACT_LOADED = "com.dt.cloudmsg.contact.loaded";
+    public static final String INTENT_ACTION_MSG_LONG_CLICKED = "com.dt.cloudmsg.msg.long.clicked";
+    public static final String INTENT_ACTION_DELETE_MSG = "com.dt.cloudmsg.delete.msg";
+
 }
