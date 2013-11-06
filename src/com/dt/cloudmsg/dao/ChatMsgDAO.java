@@ -49,6 +49,7 @@ public class ChatMsgDAO extends AbstractDAO<ChatMsgEntity>{
     public long add(ChatMsgEntity entity) {
         ContentValues cv = getCV(entity);
         long id = this.db.insert(TABLE_NAME, null, cv);
+        entity.set_id(id);
         this.notifyAdd(entity);
         return id;
     }

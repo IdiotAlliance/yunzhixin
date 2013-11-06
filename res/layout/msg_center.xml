@@ -280,11 +280,20 @@
             android:layout_width="fill_parent"
             android:layout_height="2dp"
             android:background="@drawable/shadow_span_horizontal" />
-
+        <ListView
+            android:id="@+id/msg_center_session_shortcut_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="@color/translucent"
+            android:divider="@drawable/list_span_horizontal"
+            android:dividerHeight="2dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:visibility="invisible"
+            />
         <ListView
             android:id="@+id/msg_center_search_layer_list"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:cacheColorHint="@color/translucent"
             android:divider="@drawable/list_span_horizontal"
             android:dividerHeight="2dp"

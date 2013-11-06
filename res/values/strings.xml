@@ -35,6 +35,7 @@
     <string name="pull_to_refresh_release_label">释放以加载</string>
     <string name="pull_to_refresh_refreshing_label">正在加载</string>
     <string name="pull_to_refresh_tap_label">点击加载更多</string>
+    <string name="click_to_create_session">点击新建会话</string>
     
     <string name="hint_type_email">请输入邮箱</string>
 	<string name="hint_type_uname">请输入用户名</string>

@@ -2,11 +2,9 @@
   <library name="dexedLibs">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/bin/dexedLibs/org.hamcrest.core_1.1.0.v20090501071000-e289efef4e8e78e9b9801cf603eb38c4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gson-2.2.4-d6a923cdb01b20dc61f18e206522788b.jar!/" />
       <root url="jar://$PROJECT_DIR$/bin/dexedLibs/pinyin4j-2.5.0-535f219b778a15fc39634fb9e343b00f.jar!/" />
       <root url="jar://$PROJECT_DIR$/bin/dexedLibs/android-support-v4-6d2708cc5109009607b9cd83d2925c26.jar!/" />
       <root url="jar://$PROJECT_DIR$/bin/dexedLibs/dom4j-2.0.0-ALPHA-2-2b855896005f79744e5b0bc06dc64f0c.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/commons-codec-1.8-30ac92489dcb648ff9c26016d6463da0.jar!/" />
       <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gcm-e5cd34a4df25538218bc80e5a65b8226.jar!/" />
       <root url="jar://$PROJECT_DIR$/bin/dexedLibs/commons-codec-1.7-33400870afce8064ea1c159e490b3fe6.jar!/" />
     </CLASSES>

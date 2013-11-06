@@ -13,6 +13,7 @@ import android.preference.PreferenceManager;
 import com.dt.cloudmsg.R;
 import com.dt.cloudmsg.adapter.MsgListAdapter;
 import com.dt.cloudmsg.adapter.ServerListAdapter;
+import com.dt.cloudmsg.adapter.SessionShortcutAdapter;
 import com.dt.cloudmsg.communications.MessageCenterMsgListener;
 import com.dt.cloudmsg.communications.MsgSender;
 import com.dt.cloudmsg.component.ImageBtSingle;
@@ -44,10 +45,13 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.dt.cloudmsg.model.Contact;
 import com.dt.cloudmsg.model.Device;
 import com.dt.cloudmsg.model.MsgListEntity;
 import com.dt.cloudmsg.service.MyService;
 import com.dt.cloudmsg.util.IntentConstants;
+import com.dt.cloudmsg.util.NumberFormatter;
 import com.dt.cloudmsg.util.StringUtil;
 import com.dt.cloudmsg.util.SystemConstants;
 
@@ -106,10 +110,11 @@ public class MsgCenterActivity extends BaseActivity {
     private ImageBtSingle restore_button;
 
     private MsgListAdapter msgListAdapter;
+    private SessionShortcutAdapter sessionShortcutAdapter;
 
     private ListView msgList;
     private ListView searchList;
-
+    private ListView sessionShortcutList;
 
     private BindOrUpdateDeviceReceiver bindReceiver = null;
     private MsgReceiver msgReceiver = null;
@@ -414,6 +419,11 @@ public class MsgCenterActivity extends BaseActivity {
         restore_button = (ImageBtSingle) searchLayer.findViewById(R.id.msg_center_search_layer_function_btn);
         searchList = (ListView) searchLayer.findViewById(R.id.msg_center_search_layer_list);
 
+        // 初始化创建会话快捷入口列表
+        sessionShortcutAdapter = new SessionShortcutAdapter(MsgCenterActivity.this, MyService.getSortedContacts(), gusername);
+        sessionShortcutList = (ListView) searchLayer.findViewById(R.id.msg_center_session_shortcut_list);
+        sessionShortcutList.setAdapter(sessionShortcutAdapter);
+
         filter_txt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
@@ -431,8 +441,17 @@ public class MsgCenterActivity extends BaseActivity {
             	String str = filter_txt.getText().toString();
                 if(str != null && str.length() > 0){
                 	msgListSource.filter(str);
+                    if(msgListSource.size() == 0 && MyService.isContactsLoadded()){
+                        // 若未找到会话，创建快捷方式进入新会话
+                        Device device = (Device) serverListAdapter.getItem(selected);
+                        sessionShortcutList.setVisibility(View.VISIBLE);
+                        sessionShortcutAdapter.filter(str, device.getNumber());
+                    }else {
+                        sessionShortcutList.setVisibility(View.GONE);
+                    }
                 }else{
                 	msgListSource.cancelFilter();
+                    sessionShortcutList.setVisibility(View.GONE);
                 }
             }
         });
@@ -474,6 +493,7 @@ public class MsgCenterActivity extends BaseActivity {
                 return true;
             }
 		});
+
     }
 
     private void setFunctionState(int state) {
@@ -490,6 +510,7 @@ public class MsgCenterActivity extends BaseActivity {
                 break;
             }
             case STATE_NORMAL:{
+                sessionShortcutList.setVisibility(View.GONE);
             	msgListSource.cancelFilter();
                 filter_txt.setText("");
                 searchLayer.setVisibility(View.INVISIBLE);

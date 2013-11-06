@@ -55,5 +55,92 @@ public class Contact implements Comparable<Contact>{
 			else
 				return -1;
 	}
-	
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getKey_lower() {
+        return key_lower;
+    }
+
+    public void setKey_lower(String key_lower) {
+        this.key_lower = key_lower;
+    }
+
+    public String getContact_id() {
+        return contact_id;
+    }
+
+    public void setContact_id(String contact_id) {
+        this.contact_id = contact_id;
+    }
+
+    public String getName() {
+        if(name != null)
+            return name;
+        return number;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNameNumber(){
+        if(name == null)
+            return number;
+        return name + "(" + number + ")";
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public boolean isChosen() {
+        return chosen;
+    }
+
+    public void setChosen(boolean chosen) {
+        this.chosen = chosen;
+    }
+
+    public int getStCN() {
+        return stCN;
+    }
+
+    public void setStCN(int stCN) {
+        this.stCN = stCN;
+    }
+
+    public char[] getKey_arr() {
+        return key_arr;
+    }
+
+    public void setKey_arr(char[] key_arr) {
+        this.key_arr = key_arr;
+    }
+
+    public String getShouZiMu() {
+        return shouZiMu;
+    }
+
+    public void setShouZiMu(String shouZiMu) {
+        this.shouZiMu = shouZiMu;
+    }
 }
